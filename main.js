@@ -1,5 +1,3 @@
-import './style.css'
-
 document.addEventListener('DOMContentLoaded', () => {
   // 1. Intersection Observer for Scroll Animations
   const observerOptions = {
