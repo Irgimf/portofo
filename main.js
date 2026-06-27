@@ -61,4 +61,65 @@ document.addEventListener('DOMContentLoaded', () => {
       orb.style.transform = `translate(${xOffset}px, ${yOffset}px)`;
     });
   });
+
+  // 5. Projects Carousel Slider
+  const track = document.querySelector('.projects-track');
+  const prevBtn = document.querySelector('.prev-btn');
+  const nextBtn = document.querySelector('.next-btn');
+  
+  if (track && prevBtn && nextBtn) {
+    let currentIndex = 0;
+    
+    const getCardsVisible = () => {
+      if (window.innerWidth <= 768) return 1;
+      if (window.innerWidth <= 1024) return 2;
+      return 3;
+    };
+
+    const updateCarousel = () => {
+      const card = track.children[0];
+      if (!card) return;
+      const cardWidth = card.offsetWidth;
+      // Get gap from computed style or fallback to 30
+      const gapMatch = window.getComputedStyle(track).gap.match(/(\d+)px/);
+      const gap = gapMatch ? parseInt(gapMatch[1]) : 30;
+      
+      track.style.transform = `translateX(-${currentIndex * (cardWidth + gap)}px)`;
+    };
+
+    nextBtn.addEventListener('click', () => {
+      const maxIndex = track.children.length - getCardsVisible();
+      if (currentIndex < maxIndex) {
+        currentIndex++;
+      } else {
+        currentIndex = 0; // Loop back to start
+      }
+      updateCarousel();
+    });
+
+    prevBtn.addEventListener('click', () => {
+      const maxIndex = track.children.length - getCardsVisible();
+      if (currentIndex > 0) {
+        currentIndex--;
+      } else {
+        currentIndex = maxIndex; // Loop back to end
+      }
+      updateCarousel();
+    });
+
+    // Handle resize to update carousel position
+    window.addEventListener('resize', () => {
+      // Ensure current index doesn't exceed new max index
+      const maxIndex = Math.max(0, track.children.length - getCardsVisible());
+      if (currentIndex > maxIndex) {
+        currentIndex = maxIndex;
+      }
+      // On mobile (<=768px), we use native CSS scroll snap, so reset transform
+      if (window.innerWidth <= 768) {
+        track.style.transform = 'none';
+      } else {
+        updateCarousel();
+      }
+    });
+  }
 });
