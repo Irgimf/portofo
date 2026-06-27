@@ -433,55 +433,30 @@ body {
   flex-grow: 1;
 }
 
-.project-tech {
-  list-style: none;
-  display: flex;
-  flex-wrap: wrap;
-  gap: 10px;
-  margin-bottom: 25px;
-}
-
-.project-tech li {
-  font-size: 0.85rem;
-  color: var(--secondary-color);
-  font-family: monospace;
-}
-
-.project-deploy {
+.project-skills {
   margin-top: auto;
-}
-
-.multi-badge {
   display: flex;
   flex-direction: column;
-  gap: 8px;
+  gap: 10px;
 }
 
-.badge {
-  display: inline-flex;
-  align-items: center;
-  gap: 5px;
-  padding: 5px 12px;
-  border-radius: 20px;
-  font-size: 0.8rem;
+.skills-title {
+  font-size: 0.9rem;
   font-weight: 600;
-  background: rgba(255, 255, 255, 0.05);
+  color: var(--text-color);
+  letter-spacing: 0.5px;
 }
 
-.badge.github {
-  border-left: 3px solid #fff;
+.project-skills img {
+  height: 38px;
+  max-width: 100%;
+  object-fit: contain;
+  align-self: flex-start;
+  transition: transform 0.3s ease;
 }
 
-.badge.railway {
-  border-left: 3px solid #000;
-  background: #f0f0f0;
-  color: #000;
-}
-
-.badge.vercel {
-  border-left: 3px solid #000;
-  background: #fff;
-  color: #000;
+.project-card:hover .project-skills img {
+  transform: translateY(-2px);
 }
 
 /* Contact Section */
