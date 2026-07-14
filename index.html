@@ -13,6 +13,7 @@
 </head>
 
 <body>
+  <canvas id="bg-canvas"></canvas>
   <!-- Background Animated Elements -->
   <div class="bg-elements">
     <div class="glow-orb orb-1"></div>
@@ -32,276 +33,507 @@
   </nav>
 
   <!-- Hero Section -->
-  <section id="home" class="hero">
-    <div class="hero-container">
-      <div class="hero-content">
-        <h2 class="greeting reveal-up delay-1">Hello, I'm</h2>
-        <h1 class="name reveal-up delay-2">Irgi Muhammad Fadll</h1>
-        <h3 class="role reveal-up delay-3">Web <span class="highlight">Developer</span></h3>
-        <p class="description reveal-up delay-4">
-          Building digital experiences that are fast, accessible, visually appealing, and highly responsive. I bridge
-          the
-          gap between stunning frontend interfaces and robust backend architectures.
-        </p>
-        <div class="hero-cta reveal-up delay-5">
-          <a href="#projects" class="btn btn-primary">View My Work</a>
-          <a href="#contact" class="btn btn-secondary">Contact Me</a>
-        </div>
+  <section id="home" class="hero-centered">
+    <div class="hero-bg-text">PORTOFOLIO</div>
+    <div class="hero-centered-content">
+      <div class="hero-image-centered reveal-up delay-2">
+        <img src="assets/fotosaya.png" alt="Irgi Muhammad Fadll">
       </div>
-      <div class="hero-image reveal-up delay-6">
-        <div class="img-box">
-          <img src="assets/fotosaya.jpg" alt="Irgi Muhammad Fadll">
+      <div class="hero-text-centered reveal-up delay-3">
+        <h1 class="name">Irgi Muhammad Fadll</h1>
+        <h3 class="role">MAHASISWA TEKNIK INFORMATIKA & WEB DEVELOPER</h3>
+        <div class="hero-cta-centered reveal-up delay-4">
+          <a href="#projects" class="btn btn-primary-square">PORTOFOLIO</a>
+          <a href="assets/CV.pdf" download="CV_Irgi_Muhammad_Fadll.pdf" class="btn btn-dark-square"><i
+              class='bx bxs-file-pdf'></i> UNDUH CV</a>
         </div>
       </div>
     </div>
+    <div class="hero-fg-text">PORTOFOLIO</div>
   </section>
 
   <!-- About Section -->
   <section id="about" class="about section-padding">
-    <div class="section-title scroll-reveal">
+    <div class="section-title centered-title scroll-reveal">
       <h2>About <span class="highlight">Me</span></h2>
     </div>
     <div class="about-content">
       <div class="about-text glass-card scroll-reveal">
-        <p>Berstatus sebagai mahasiswa <strong>Teknik Informatika di UIN Sunan Gunung Djati Bandung</strong> saya adalah
-          seorang aspiring <strong>Web Developer</strong> yang memiliki antusiasme tinggi dalam membangun
-          aplikasi web modern,
-          interaktif, dan fungsional. Saya berfokus pada pengembangan antarmuka pengguna yang adaptif serta pengalaman
-          web yang responsif dan memukau.</p>
+        <p>Berstatus sebagai mahasiswa <strong>Teknik Informatika di UIN Sunan Gunung Djati Bandung</strong>, saya
+          adalah
+          seorang <em>aspiring</em> <strong>Web Developer</strong> yang memiliki antusiasme tinggi dalam membangun
+          aplikasi web modern dan interaktif. Selain mendalami pengembangan antarmuka pengguna (UI/UX), saya juga
+          menaruh minat yang sangat besar pada dunia <strong>Data Science</strong> dan <strong>Artificial
+            Intelligence (AI)</strong>.</p>
         <br>
-        <p>Memiliki ketertarikan besar pada teknologi AI, dan sedang mendalami penggunaannya untuk memecahkan berbagai
-          permasalahan, mulai dari otomatisasi tugas sederhana hingga pengembangan sistem cerdas. Saya juga memiliki
-          ketertarikan pada pengembangan game dan berharap dapat menggabungkan keahlian pengembangan perangkat lunak
-          dengan kreativitas di masa depan.</p>
+        <p>Saat ini, saya aktif mempelajari pengolahan data menggunakan bahasa pemrograman <strong>Python</strong> dan
+          <strong>SQL</strong>, serta mendalami dasar-dasar <strong>Machine Learning</strong>. Keseriusan saya dalam
+          bidang ini dibuktikan melalui berbagai sertifikasi profesional yang telah saya raih dari institusi ternama
+          seperti <em>Dicoding Indonesia</em> dan <em>DBS Foundation</em>.
+        </p>
         <br>
-        <p>Melalui kombinasi teori akademis dan proyek praktis, saya berkomitmen menghadirkan produk digital berkualitas
-          tinggi yang mengutamakan performa optimal serta pengalaman pengguna (UI/UX) yang berkesan.</p>
+        <p>Melalui kombinasi keahlian di bidang pengembangan perangkat lunak dan analisis data, saya berkomitmen
+          untuk membangun sistem cerdas yang tidak hanya memukau secara visual, tetapi juga kuat dan efisien
+          dalam pemrosesan data.</p>
       </div>
     </div>
   </section>
 
-  <!-- Projects Section -->
-  <section id="projects" class="projects section-padding">
-    <div class="section-title scroll-reveal">
-      <h2>Featured <span class="highlight">Projects</span></h2>
+  <!-- Education Section -->
+  <section id="education" class="education section-padding">
+    <div class="section-title scroll-reveal" style="border: none; text-align: center; padding: 0;">
+      <h2>Education <span class="highlight">History</span></h2>
     </div>
-    <div class="carousel-container scroll-reveal">
-      <button class="carousel-btn prev-btn" aria-label="Previous Project"><i class='bx bx-chevron-left'></i></button>
+    <div class="timeline-container scroll-reveal">
+      <div class="timeline-line"></div>
 
-      <div class="projects-carousel">
-        <div class="projects-track">
-          <!-- Project 1 -->
-          <div class="project-card glass-card">
-            <div class="project-content">
-              <div class="project-image">
-                <!-- Ganti href/src di bawah dengan lokasi file gambar Anda -->
-                <img src="assets/penyakit-kuning.png" alt="Cek Penyakit Kuning Preview"
-                  onerror="this.src='https://via.placeholder.com/600x400/050505/00ffcc?text=Cek+Penyakit+Kuning'">
-              </div>
-              <div class="project-header">
-                <i class='bx bx-folder highlight-icon'></i>
-                <div class="project-links">
-                  <a href="https://github.com/Irgimf/cek-penyakit-kuning" target="_blank" title="GitHub"><i
-                      class='bx bxl-github'></i></a>
-                  <a href="https://irgimf.github.io/cek-penyakit-kuning/" target="_blank" title="Live Preview"><i
-                      class='bx bx-link-external'></i></a>
+      <!-- Item 1 (S1) -->
+      <div class="timeline-item">
+        <div class="timeline-content left">
+          <h3 class="degree">S1 Teknik Informatika</h3>
+          <span class="school highlight">UIN Sunan Gunung Djati Bandung</span>
+          <p class="desc">Fokus pada rekayasa perangkat lunak, pengembangan sistem informasi, dan teknologi kecerdasan
+            buatan.</p>
+        </div>
+        <div class="timeline-dot active"></div>
+        <div class="timeline-year right">
+          <span class="year-pill">2024 - Sekarang</span>
+        </div>
+      </div>
+
+      <!-- Item 2 (SMA) -->
+      <div class="timeline-item">
+        <div class="timeline-year left">
+          <span class="year-pill">2019 - 2023</span>
+        </div>
+        <div class="timeline-dot"></div>
+        <div class="timeline-content right">
+          <h3 class="degree">Sekolah Menengah Atas (SMA)</h3>
+          <span class="school highlight">SMA Terpadu Riyadlul Ulum</span>
+          <p class="desc">Masa di mana saya mulai melatih daya berpikir kritis, terstruktur, dan kemampuan problem
+            solving.</p>
+        </div>
+      </div>
+
+      <!-- Item 3 (SMP) -->
+      <div class="timeline-item">
+        <div class="timeline-content left">
+          <h3 class="degree">Sekolah Menengah Pertama (SMP)</h3>
+          <span class="school highlight">SMP Terpadu Riyadlul Ulum Wadda'wah</span>
+          <p class="desc">Masa transisi di mana ketertarikan saya terhadap observasi dan teknologi mulai tumbuh.</p>
+        </div>
+        <div class="timeline-dot"></div>
+        <div class="timeline-year right">
+          <span class="year-pill">2017 - 2019</span>
+        </div>
+      </div>
+
+      <!-- Item 4 (SD) -->
+      <div class="timeline-item">
+        <div class="timeline-year left">
+          <span class="year-pill">2011 - 2017</span>
+        </div>
+        <div class="timeline-dot"></div>
+        <div class="timeline-content right">
+          <h3 class="degree">Sekolah Dasar (SD)</h3>
+          <span class="school highlight">SDN 1 Cihaurbeuti</span>
+          <p class="desc">Masa di mana fondasi kedisiplinan, nilai moral, dan rasa ingin tahu saya mulai terbentuk.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Portfolio Section -->
+  <section id="projects" class="portfolio section-padding">
+    <div class="section-title scroll-reveal" style="text-align: left; border: none; padding: 0;">
+      <h2>PORTFOLIO <span class="highlight">SHOWCASE</span></h2>
+      <p class="desc" style="margin-top: 10px;">Eksplorasi proyek pengembangan, sertifikat penghargaan, dan pengalaman
+        profesional saya.</p>
+    </div>
+
+    <div class="portfolio-tabs scroll-reveal">
+      <button class="tab-btn active" data-target="tab-projects"><i class='bx bx-book-open'></i> Projects</button>
+      <button class="tab-btn" data-target="tab-certificates"><i class='bx bx-award'></i> Certificates &
+        Achievements</button>
+      <button class="tab-btn" data-target="tab-experience"><i class='bx bx-briefcase'></i> Experience</button>
+    </div>
+
+    <div class="portfolio-content">
+      <!-- Tab Projects -->
+      <div id="tab-projects" class="tab-pane active fade-in">
+        <div class="carousel-container scroll-reveal">
+          <button class="carousel-btn prev-btn" aria-label="Previous Project"><i
+              class='bx bx-chevron-left'></i></button>
+
+          <div class="projects-carousel">
+            <div class="projects-track">
+              <!-- Project 1 -->
+              <div class="project-card glass-card">
+                <div class="project-content">
+                  <div class="project-image">
+                    <!-- Ganti href/src di bawah dengan lokasi file gambar Anda -->
+                    <img src="assets/penyakit-kuning.png" alt="Cek Penyakit Kuning Preview"
+                      onerror="this.src='https://via.placeholder.com/600x400/050505/00ffcc?text=Cek+Penyakit+Kuning'">
+                  </div>
+                  <div class="project-header">
+                    <i class='bx bx-folder highlight-icon'></i>
+                    <div class="project-links">
+                      <a href="https://github.com/Irgimf/cek-penyakit-kuning" target="_blank" title="GitHub"><i
+                          class='bx bxl-github'></i></a>
+                      <a href="https://irgimf.github.io/cek-penyakit-kuning/" target="_blank" title="Live Preview"><i
+                          class='bx bx-link-external'></i></a>
+                    </div>
+                  </div>
+                  <h3 class="project-title">Cek Penyakit Kuning</h3>
+                  <p class="project-desc">Aplikasi web yang dirancang untuk membantu mendeteksi gejala penyakit kuning.
+                    Memiliki
+                    tampilan front-end yang interaktif dan user-friendly.</p>
+                  <div class="project-skills">
+                    <span class="skills-title">Tech Stack:</span>
+                    <div class="skills-icons">
+                      <div class="skill-icon-wrapper" data-tooltip="HTML5">
+                        <img src="https://skillicons.dev/icons?i=html&theme=dark" alt="HTML" />
+                      </div>
+                      <div class="skill-icon-wrapper" data-tooltip="CSS3">
+                        <img src="https://skillicons.dev/icons?i=css&theme=dark" alt="CSS" />
+                      </div>
+                      <div class="skill-icon-wrapper" data-tooltip="JavaScript">
+                        <img src="https://skillicons.dev/icons?i=js&theme=dark" alt="JavaScript" />
+                      </div>
+                    </div>
+                  </div>
                 </div>
               </div>
-              <h3 class="project-title">Cek Penyakit Kuning</h3>
-              <p class="project-desc">Aplikasi web yang dirancang untuk membantu mendeteksi gejala penyakit kuning.
-                Memiliki
-                tampilan front-end yang interaktif dan user-friendly.</p>
-              <div class="project-skills">
-                <span class="skills-title">Tech Stack:</span>
-                <div class="skills-icons">
-                  <div class="skill-icon-wrapper" data-tooltip="HTML5">
-                    <img src="https://skillicons.dev/icons?i=html&theme=dark" alt="HTML" />
+
+              <!-- Project 2 -->
+              <div class="project-card glass-card">
+                <div class="project-content">
+                  <div class="project-image">
+                    <!-- Ganti href/src di bawah dengan lokasi file gambar Anda -->
+                    <img src="assets/nickname-generator.png" alt="Nickname Generator Preview"
+                      onerror="this.src='https://via.placeholder.com/600x400/050505/bd00ff?text=Nickname+Generator'">
                   </div>
-                  <div class="skill-icon-wrapper" data-tooltip="CSS3">
-                    <img src="https://skillicons.dev/icons?i=css&theme=dark" alt="CSS" />
+                  <div class="project-header">
+                    <i class='bx bx-folder highlight-icon'></i>
+                    <div class="project-links">
+                      <a href="https://github.com/Irgimf/web-nickname-generator" target="_blank" title="GitHub"><i
+                          class='bx bxl-github'></i></a>
+                      <a href="https://irgimf.github.io/web-nickname-generator/" target="_blank" title="Live Preview"><i
+                          class='bx bx-link-external'></i></a>
+                    </div>
                   </div>
-                  <div class="skill-icon-wrapper" data-tooltip="JavaScript">
-                    <img src="https://skillicons.dev/icons?i=js&theme=dark" alt="JavaScript" />
+                  <h3 class="project-title">Nickname Generator</h3>
+                  <p class="project-desc">Tools praktis untuk menghasilkan berbagai variasi nickname yang unik dan
+                    keren,
+                    cocok
+                    untuk kebutuhan gaming atau profil sosial media.</p>
+                  <div class="project-skills">
+                    <span class="skills-title">Tech Stack:</span>
+                    <div class="skills-icons">
+                      <div class="skill-icon-wrapper" data-tooltip="HTML5">
+                        <img src="https://skillicons.dev/icons?i=html&theme=dark" alt="HTML" />
+                      </div>
+                      <div class="skill-icon-wrapper" data-tooltip="CSS3">
+                        <img src="https://skillicons.dev/icons?i=css&theme=dark" alt="CSS" />
+                      </div>
+                      <div class="skill-icon-wrapper" data-tooltip="JavaScript">
+                        <img src="https://skillicons.dev/icons?i=js&theme=dark" alt="JavaScript" />
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <!-- Project 3 -->
+              <div class="project-card glass-card">
+                <div class="project-content">
+                  <div class="project-image">
+                    <!-- Ganti href/src di bawah dengan lokasi file gambar Anda -->
+                    <img src="assets/dashboard-dapodik.png" alt="Web Dapodik Preview"
+                      onerror="this.src='https://via.placeholder.com/600x400/050505/0055ff?text=Web+Dapodik'">
+                  </div>
+                  <div class="project-header">
+                    <i class='bx bx-folder highlight-icon'></i>
+                    <div class="project-links">
+                      <a href="https://github.com/Irgimf/dashboard-dapodik" target="_blank" title="GitHub"><i
+                          class='bx bxl-github'></i></a>
+                      <a href="https://dashboard-dapodik.vercel.app" target="_blank" title="Live Preview"><i
+                          class='bx bx-link-external'></i></a>
+                    </div>
+                  </div>
+                  <h3 class="project-title">Web Dapodik Kota Bandung</h3>
+                  <p class="project-desc">Sistem informasi data pokok pendidikan terpadu untuk Kota Bandung. Menggunakan
+                    arsitektur full stack modern untuk manajemen data berskala besar.<br>
+                    <span class="skills-title" style="display:inline-block; margin-top:5px;">Demo Akun:</span> Username:
+                    viewer | Password: viewer
+                  </p>
+                  <div class="project-skills">
+                    <span class="skills-title">Tech Stack:</span>
+                    <div class="skills-icons">
+                      <div class="skill-icon-wrapper" data-tooltip="React">
+                        <img src="https://skillicons.dev/icons?i=react&theme=dark" alt="React" />
+                      </div>
+                      <div class="skill-icon-wrapper" data-tooltip="Tailwind CSS">
+                        <img src="https://skillicons.dev/icons?i=tailwind&theme=dark" alt="Tailwind CSS" />
+                      </div>
+                      <div class="skill-icon-wrapper" data-tooltip="Python">
+                        <img src="https://skillicons.dev/icons?i=python&theme=dark" alt="Python" />
+                      </div>
+                      <div class="skill-icon-wrapper" data-tooltip="FastAPI">
+                        <img src="https://skillicons.dev/icons?i=fastapi&theme=dark" alt="FastAPI" />
+                      </div>
+                      <div class="skill-icon-wrapper" data-tooltip="PostgreSQL">
+                        <img src="https://skillicons.dev/icons?i=postgres&theme=dark" alt="PostgreSQL" />
+                      </div>
+                      <div class="skill-icon-wrapper" data-tooltip="Vercel">
+                        <img src="https://skillicons.dev/icons?i=vercel&theme=dark" alt="Vercel" />
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <!-- Project 4 (New) -->
+              <div class="project-card glass-card">
+                <div class="project-content">
+                  <div class="project-image">
+                    <img src="assets/steganografi.png" alt="Steganografi Web Preview"
+                      onerror="this.src='https://via.placeholder.com/600x400/050505/00ffcc?text=Steganografi+Web'">
+                  </div>
+                  <div class="project-header">
+                    <i class='bx bx-folder highlight-icon'></i>
+                    <div class="project-links">
+                      <a href="https://github.com/Irgimf/steganografi-web" target="_blank" title="GitHub"><i
+                          class='bx bxl-github'></i></a>
+                      <a href="https://irgimf.github.io/steganografi-web/" target="_blank" title="Live Preview"><i
+                          class='bx bx-link-external'></i></a>
+                    </div>
+                  </div>
+                  <h3 class="project-title">Steganografi Web</h3>
+                  <p class="project-desc">Aplikasi web murni menggunakan HTML, CSS, dan JavaScript untuk menyisipkan
+                    pesan
+                    rahasia ke dalam sebuah gambar menggunakan teknik steganografi.</p>
+                  <div class="project-skills">
+                    <span class="skills-title">Tech Stack:</span>
+                    <div class="skills-icons">
+                      <div class="skill-icon-wrapper" data-tooltip="HTML5">
+                        <img src="https://skillicons.dev/icons?i=html&theme=dark" alt="HTML" />
+                      </div>
+                      <div class="skill-icon-wrapper" data-tooltip="CSS3">
+                        <img src="https://skillicons.dev/icons?i=css&theme=dark" alt="CSS" />
+                      </div>
+                      <div class="skill-icon-wrapper" data-tooltip="JavaScript">
+                        <img src="https://skillicons.dev/icons?i=js&theme=dark" alt="JavaScript" />
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <!-- Project 5 -->
+              <div class="project-card glass-card">
+                <div class="project-content">
+                  <div class="project-image">
+                    <img src="assets/cekduit.png" alt="Cekduit Preview"
+                      onerror="this.src='https://via.placeholder.com/600x400/050505/ff0055?text=Cekduit'">
+                  </div>
+                  <div class="project-header">
+                    <i class='bx bx-folder highlight-icon'></i>
+                    <div class="project-links">
+                      <a href="https://github.com/Irgimf/cekduit" target="_blank" title="GitHub"><i
+                          class='bx bxl-github'></i></a>
+                      <a href="https://cekduit.alwaysdata.net" target="_blank" title="Live Preview"><i
+                          class='bx bx-link-external'></i></a>
+                    </div>
+                  </div>
+                  <h3 class="project-title">Cekduit</h3>
+                  <p class="project-desc">Aplikasi web manajemen keuangan yang dibangun dengan PHP, Laravel 12, dan
+                    MySQL.
+                    Menampilkan visualisasi data statistik interaktif dengan Chart.js.</p>
+                  <div class="project-skills">
+                    <span class="skills-title">Tech Stack:</span>
+                    <div class="skills-icons">
+                      <div class="skill-icon-wrapper" data-tooltip="PHP">
+                        <img src="https://skillicons.dev/icons?i=php&theme=dark" alt="PHP" />
+                      </div>
+                      <div class="skill-icon-wrapper" data-tooltip="Laravel">
+                        <img src="https://skillicons.dev/icons?i=laravel&theme=dark" alt="Laravel" />
+                      </div>
+                      <div class="skill-icon-wrapper" data-tooltip="MySQL">
+                        <img src="https://skillicons.dev/icons?i=mysql&theme=dark" alt="MySQL" />
+                      </div>
+                      <div class="skill-icon-wrapper" data-tooltip="Bootstrap">
+                        <img src="https://skillicons.dev/icons?i=bootstrap&theme=dark" alt="Bootstrap" />
+                      </div>
+                      <div class="skill-icon-wrapper" data-tooltip="JavaScript">
+                        <img src="https://skillicons.dev/icons?i=js&theme=dark" alt="JavaScript" />
+                      </div>
+                    </div>
                   </div>
                 </div>
               </div>
             </div>
           </div>
 
-          <!-- Project 2 -->
-          <div class="project-card glass-card">
-            <div class="project-content">
-              <div class="project-image">
-                <!-- Ganti href/src di bawah dengan lokasi file gambar Anda -->
-                <img src="assets/nickname-generator.png" alt="Nickname Generator Preview"
-                  onerror="this.src='https://via.placeholder.com/600x400/050505/bd00ff?text=Nickname+Generator'">
-              </div>
-              <div class="project-header">
-                <i class='bx bx-folder highlight-icon'></i>
-                <div class="project-links">
-                  <a href="https://github.com/Irgimf/web-nickname-generator" target="_blank" title="GitHub"><i
-                      class='bx bxl-github'></i></a>
-                  <a href="https://irgimf.github.io/web-nickname-generator/" target="_blank" title="Live Preview"><i
-                      class='bx bx-link-external'></i></a>
-                </div>
-              </div>
-              <h3 class="project-title">Nickname Generator</h3>
-              <p class="project-desc">Tools praktis untuk menghasilkan berbagai variasi nickname yang unik dan keren,
-                cocok
-                untuk kebutuhan gaming atau profil sosial media.</p>
-              <div class="project-skills">
-                <span class="skills-title">Tech Stack:</span>
-                <div class="skills-icons">
-                  <div class="skill-icon-wrapper" data-tooltip="HTML5">
-                    <img src="https://skillicons.dev/icons?i=html&theme=dark" alt="HTML" />
-                  </div>
-                  <div class="skill-icon-wrapper" data-tooltip="CSS3">
-                    <img src="https://skillicons.dev/icons?i=css&theme=dark" alt="CSS" />
-                  </div>
-                  <div class="skill-icon-wrapper" data-tooltip="JavaScript">
-                    <img src="https://skillicons.dev/icons?i=js&theme=dark" alt="JavaScript" />
-                  </div>
-                </div>
-              </div>
+          <button class="carousel-btn next-btn" aria-label="Next Project"><i class='bx bx-chevron-right'></i></button>
+        </div>
+      </div> <!-- End Tab Projects -->
+
+      <!-- Tab Certificates -->
+      <div id="tab-certificates" class="tab-pane fade-in">
+        <div class="certificates-grid scroll-reveal">
+          <!-- Cert 1 -->
+          <div class="cert-card glass-card">
+            <div class="cert-img">
+              <img src="assets/sertifikat1.png" alt="Memulai Pemrograman dengan Python">
+            </div>
+            <div class="cert-info">
+              <h3>Memulai Pemrograman dengan Python (2026)</h3>
+              <p>Dicoding Indonesia x DBS Foundation</p>
+            </div>
+          </div>
+          <!-- Cert 2 -->
+          <div class="cert-card glass-card">
+            <div class="cert-img">
+              <img src="assets/sertifikat2.png" alt="Dasar SQL">
+            </div>
+            <div class="cert-info">
+              <h3>Belajar Dasar Structured Query Language (SQL) (2026)</h3>
+              <p>Dicoding Indonesia x DBS Foundation</p>
+            </div>
+          </div>
+          <!-- Cert 3 -->
+          <div class="cert-card glass-card">
+            <div class="cert-img">
+              <img src="assets/sertifikat3.png" alt="Strategi Pengembangan Diri">
+            </div>
+            <div class="cert-info">
+              <h3>Belajar Strategi Pengembangan Diri (2026)</h3>
+              <p>Dicoding Indonesia x DBS Foundation</p>
+            </div>
+          </div>
+          <!-- Cert 4 -->
+          <div class="cert-card glass-card">
+            <div class="cert-img">
+              <img src="assets/sertifikat4.png" alt="Berinovasi dengan AI">
+            </div>
+            <div class="cert-info">
+              <h3>Berinovasi dengan AI (2026)</h3>
+              <p>Kemenpora x Yayasan Plan International Indonesia</p>
+            </div>
+          </div>
+          <!-- Cert 5 -->
+          <div class="cert-card glass-card">
+            <div class="cert-img">
+              <img src="assets/sertifikat5.png" alt="Machine Learning">
+            </div>
+            <div class="cert-info">
+              <h3>Belajar Machine Learning untuk Pemula (2026)</h3>
+              <p>Dicoding Indonesia x DBS Foundation</p>
+            </div>
+          </div>
+          <!-- Cert 6 -->
+          <div class="cert-card glass-card">
+            <div class="cert-img">
+              <img src="assets/sertifikat6.png" alt="Data Science">
+            </div>
+            <div class="cert-info">
+              <h3>Belajar Dasar Data Science (2026)</h3>
+              <p>Dicoding Indonesia x DBS Foundation</p>
             </div>
           </div>
 
-          <!-- Project 3 -->
-          <div class="project-card glass-card">
-            <div class="project-content">
-              <div class="project-image">
-                <!-- Ganti href/src di bawah dengan lokasi file gambar Anda -->
-                <img src="assets/dashboard-dapodik.png" alt="Web Dapodik Preview"
-                  onerror="this.src='https://via.placeholder.com/600x400/050505/0055ff?text=Web+Dapodik'">
-              </div>
-              <div class="project-header">
-                <i class='bx bx-folder highlight-icon'></i>
-                <div class="project-links">
-                  <a href="https://github.com/Irgimf/dashboard-dapodik" target="_blank" title="GitHub"><i
-                      class='bx bxl-github'></i></a>
-                  <a href="https://dashboard-dapodik.vercel.app" target="_blank" title="Live Preview"><i
-                      class='bx bx-link-external'></i></a>
-                </div>
-              </div>
-              <h3 class="project-title">Web Dapodik Kota Bandung</h3>
-              <p class="project-desc">Sistem informasi data pokok pendidikan terpadu untuk Kota Bandung. Menggunakan
-                arsitektur full stack modern untuk manajemen data berskala besar.<br>
-                <span class="skills-title" style="display:inline-block; margin-top:5px;">Demo Akun:</span> Username:
-                viewer | Password: viewer
-              </p>
-              <div class="project-skills">
-                <span class="skills-title">Tech Stack:</span>
-                <div class="skills-icons">
-                  <div class="skill-icon-wrapper" data-tooltip="React">
-                    <img src="https://skillicons.dev/icons?i=react&theme=dark" alt="React" />
-                  </div>
-                  <div class="skill-icon-wrapper" data-tooltip="Tailwind CSS">
-                    <img src="https://skillicons.dev/icons?i=tailwind&theme=dark" alt="Tailwind CSS" />
-                  </div>
-                  <div class="skill-icon-wrapper" data-tooltip="Python">
-                    <img src="https://skillicons.dev/icons?i=python&theme=dark" alt="Python" />
-                  </div>
-                  <div class="skill-icon-wrapper" data-tooltip="FastAPI">
-                    <img src="https://skillicons.dev/icons?i=fastapi&theme=dark" alt="FastAPI" />
-                  </div>
-                  <div class="skill-icon-wrapper" data-tooltip="PostgreSQL">
-                    <img src="https://skillicons.dev/icons?i=postgres&theme=dark" alt="PostgreSQL" />
-                  </div>
-                  <div class="skill-icon-wrapper" data-tooltip="Vercel">
-                    <img src="https://skillicons.dev/icons?i=vercel&theme=dark" alt="Vercel" />
-                  </div>
-                </div>
-              </div>
+          <!-- Achievement 1 -->
+          <div class="cert-card glass-card achievement-card">
+            <div class="cert-img">
+              <img src="assets/penghargaan1.jpg" alt="POSPENAS IX">
             </div>
-          </div>
-
-          <!-- Project 4 (New) -->
-          <div class="project-card glass-card">
-            <div class="project-content">
-              <div class="project-image">
-                <img src="assets/steganografi.png" alt="Steganografi Web Preview"
-                  onerror="this.src='https://via.placeholder.com/600x400/050505/00ffcc?text=Steganografi+Web'">
-              </div>
-              <div class="project-header">
-                <i class='bx bx-folder highlight-icon'></i>
-                <div class="project-links">
-                  <a href="https://github.com/Irgimf/steganografi-web" target="_blank" title="GitHub"><i
-                      class='bx bxl-github'></i></a>
-                  <a href="https://irgimf.github.io/steganografi-web/" target="_blank" title="Live Preview"><i
-                      class='bx bx-link-external'></i></a>
-                </div>
-              </div>
-              <h3 class="project-title">Steganografi Web</h3>
-              <p class="project-desc">Aplikasi web murni menggunakan HTML, CSS, dan JavaScript untuk menyisipkan pesan
-                rahasia ke dalam sebuah gambar menggunakan teknik steganografi.</p>
-              <div class="project-skills">
-                <span class="skills-title">Tech Stack:</span>
-                <div class="skills-icons">
-                  <div class="skill-icon-wrapper" data-tooltip="HTML5">
-                    <img src="https://skillicons.dev/icons?i=html&theme=dark" alt="HTML" />
-                  </div>
-                  <div class="skill-icon-wrapper" data-tooltip="CSS3">
-                    <img src="https://skillicons.dev/icons?i=css&theme=dark" alt="CSS" />
-                  </div>
-                  <div class="skill-icon-wrapper" data-tooltip="JavaScript">
-                    <img src="https://skillicons.dev/icons?i=js&theme=dark" alt="JavaScript" />
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-
-          <!-- Project 5 -->
-          <div class="project-card glass-card">
-            <div class="project-content">
-              <div class="project-image">
-                <img src="assets/cekduit.png" alt="Cekduit Preview"
-                  onerror="this.src='https://via.placeholder.com/600x400/050505/ff0055?text=Cekduit'">
-              </div>
-              <div class="project-header">
-                <i class='bx bx-folder highlight-icon'></i>
-                <div class="project-links">
-                  <a href="https://github.com/Irgimf/cekduit" target="_blank" title="GitHub"><i
-                      class='bx bxl-github'></i></a>
-                  <a href="https://cekduit.alwaysdata.net" target="_blank" title="Live Preview"><i
-                      class='bx bx-link-external'></i></a>
-                </div>
-              </div>
-              <h3 class="project-title">Cekduit</h3>
-              <p class="project-desc">Aplikasi web manajemen keuangan yang dibangun dengan PHP, Laravel 12, dan MySQL.
-                Menampilkan visualisasi data statistik interaktif dengan Chart.js.</p>
-              <div class="project-skills">
-                <span class="skills-title">Tech Stack:</span>
-                <div class="skills-icons">
-                  <div class="skill-icon-wrapper" data-tooltip="PHP">
-                    <img src="https://skillicons.dev/icons?i=php&theme=dark" alt="PHP" />
-                  </div>
-                  <div class="skill-icon-wrapper" data-tooltip="Laravel">
-                    <img src="https://skillicons.dev/icons?i=laravel&theme=dark" alt="Laravel" />
-                  </div>
-                  <div class="skill-icon-wrapper" data-tooltip="MySQL">
-                    <img src="https://skillicons.dev/icons?i=mysql&theme=dark" alt="MySQL" />
-                  </div>
-                  <div class="skill-icon-wrapper" data-tooltip="Bootstrap">
-                    <img src="https://skillicons.dev/icons?i=bootstrap&theme=dark" alt="Bootstrap" />
-                  </div>
-                  <div class="skill-icon-wrapper" data-tooltip="JavaScript">
-                    <img src="https://skillicons.dev/icons?i=js&theme=dark" alt="JavaScript" />
-                  </div>
-                </div>
-              </div>
+            <div class="cert-info">
+              <h3>Peserta Kontingen Jawa Barat - Cabang Film Pendek POSPENAS IX (2022)</h3>
+              <p>Direktorat Jenderal Pendidikan Islam, Kementerian Agama RI</p>
+              <p class="desc" style="margin-top: 10px;">Menjadi perwakilan kontingen Provinsi Jawa Barat dalam ajang
+                Pekan Olahraga dan Seni antar Pondok Pesantren Tingkat Nasional (POSPENAS) IX</p>
             </div>
           </div>
         </div>
       </div>
 
-      <button class="carousel-btn next-btn" aria-label="Next Project"><i class='bx bx-chevron-right'></i></button>
+      <!-- Tab Experience -->
+      <div id="tab-experience" class="tab-pane fade-in">
+        <div class="experience-list scroll-reveal">
+
+          <!-- Organization Header -->
+          <div class="exp-category">
+            <h3><i class='bx bx-buildings'></i> Organizations</h3>
+          </div>
+
+          <!-- Exp 1 -->
+          <div class="exp-card glass-card">
+            <div class="exp-header-top">
+              <div class="exp-icon"><i class='bx bxs-group'></i></div>
+              <div class="exp-date">
+                <span class="year-pill-new">2022 - 2023</span>
+              </div>
+            </div>
+            <div class="exp-title-group">
+              <h4>KOORDINATOR GERAKAN PRAMUKA</h4>
+              <span class="exp-role">Wakil Pradana</span>
+            </div>
+            <p class="exp-desc">Bertanggung jawab mendampingi Pradana dalam memimpin, mengoordinasikan, dan mengelola
+              manajemen tim Ambalan Hasan Muhammad di Pangkalan SMA Terpadu Riyadlul Ulum. Aktif merancang program kerja
+              kepanduan, mengawasi pelaksanaan kegiatan, serta memastikan tertib administrasi organisasi berjalan
+              efektif dengan predikat Sangat Baik.</p>
+          </div>
+
+          <!-- Exp 2 -->
+          <div class="exp-card glass-card">
+            <div class="exp-header-top">
+              <div class="exp-icon"><i class='bx bxs-group'></i></div>
+              <div class="exp-date">
+                <span class="year-pill-new">2022 - 2023</span>
+              </div>
+            </div>
+            <div class="exp-title-group">
+              <h4>Organisasi Santri Pesantren Condong (OSPC)</h4>
+              <span class="exp-role">Sekretaris</span>
+            </div>
+            <p class="exp-desc">Bertanggung jawab penuh atas pengelolaan administrasi, surat-menyurat, dan pengarsipan
+              dokumen untuk Organisasi Santri Pesantren Condong (organisasi intra-sekolah setingkat OSIS). Aktif
+              menyusun proposal kegiatan, berkoordinasi dengan seluruh divisi kepengurusan, serta membantu memfasilitasi
+              program kerja kedisiplinan dan pengembangan santri selama satu periode masa bakti.</p>
+          </div>
+
+          <!-- Volunteers Header -->
+          <div class="exp-category" style="margin-top: 40px;">
+            <h3><i class='bx bx-heart'></i> Volunteer</h3>
+          </div>
+
+          <!-- Exp 3 -->
+          <div class="exp-card glass-card">
+            <div class="exp-header-top">
+              <div class="exp-icon"><i class='bx bxs-group'></i></div>
+              <div class="exp-date">
+                <span class="year-pill-new">2025</span>
+              </div>
+            </div>
+            <div class="exp-title-group">
+              <h4>Event Runner - GDG Cloud Bandung</h4>
+              <span class="exp-role">Event Runner – Google Cloud DevFest Bandung</span>
+            </div>
+            <p class="exp-desc">Supported the successful execution of Google Cloud DevFest Bandung by coordinating
+              on-site operations and ensuring smooth event flow. Actively assisted event organizers, speakers, and
+              participants by handling logistical needs, managing session transitions, and responding quickly to
+              operational requirements.</p>
+          </div>
+
+        </div>
+      </div>
     </div>
   </section>
 
   <!-- Contact Section -->
   <section id="contact" class="contact section-padding">
-    <div class="section-title scroll-reveal">
+    <div class="section-title centered-title scroll-reveal">
       <h2>Get In <span class="highlight">Touch</span></h2>
     </div>
     <div class="contact-content glass-card scroll-reveal">

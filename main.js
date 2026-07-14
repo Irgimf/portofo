@@ -122,4 +122,147 @@ document.addEventListener('DOMContentLoaded', () => {
       }
     });
   }
+
+  // 6. Portfolio Tabs
+  const tabBtns = document.querySelectorAll('.tab-btn');
+  const tabPanes = document.querySelectorAll('.tab-pane');
+
+  tabBtns.forEach(btn => {
+    btn.addEventListener('click', () => {
+      // Remove active from all buttons and panes
+      tabBtns.forEach(b => b.classList.remove('active'));
+      tabPanes.forEach(p => p.classList.remove('active'));
+
+      // Add active to clicked button and target pane
+      btn.classList.add('active');
+      const targetId = btn.getAttribute('data-target');
+      const targetPane = document.getElementById(targetId);
+      if (targetPane) {
+        targetPane.classList.add('active');
+      }
+    });
+  });
+  // 7. Interactive Particle Network Background
+  const canvas = document.getElementById('bg-canvas');
+  if (canvas) {
+    const ctx = canvas.getContext('2d');
+    let width = canvas.width = window.innerWidth;
+    let height = canvas.height = window.innerHeight;
+    let particles = [];
+    
+    const properties = {
+      particleColor: 'rgba(29, 205, 159, 0.7)',
+      particleRadius: 2,
+      particleCount: window.innerWidth < 768 ? 40 : 80,
+      particleMaxVelocity: 0.8,
+      lineLength: 150
+    };
+    
+    let mouse = { x: null, y: null };
+    
+    window.addEventListener('mousemove', (e) => {
+      mouse.x = e.clientX;
+      mouse.y = e.clientY;
+    });
+    
+    window.addEventListener('mouseout', () => {
+      mouse.x = null;
+      mouse.y = null;
+    });
+    
+    window.addEventListener('resize', () => {
+      width = canvas.width = window.innerWidth;
+      height = canvas.height = window.innerHeight;
+      properties.particleCount = window.innerWidth < 768 ? 40 : 80;
+      particles = [];
+      init();
+    });
+
+    class Particle {
+      constructor() {
+        this.x = Math.random() * width;
+        this.y = Math.random() * height;
+        this.velocityX = (Math.random() - 0.5) * properties.particleMaxVelocity;
+        this.velocityY = (Math.random() - 0.5) * properties.particleMaxVelocity;
+      }
+      
+      update() {
+        if (this.x + this.velocityX > width || this.x + this.velocityX < 0) this.velocityX *= -1;
+        if (this.y + this.velocityY > height || this.y + this.velocityY < 0) this.velocityY *= -1;
+        this.x += this.velocityX;
+        this.y += this.velocityY;
+      }
+      
+      draw() {
+        ctx.beginPath();
+        ctx.arc(this.x, this.y, properties.particleRadius, 0, Math.PI * 2);
+        ctx.fillStyle = properties.particleColor;
+        ctx.fill();
+      }
+    }
+
+    function drawLines() {
+      for (let i = 0; i < particles.length; i++) {
+        for (let j = i + 1; j < particles.length; j++) {
+          const dx = particles[j].x - particles[i].x;
+          const dy = particles[j].y - particles[i].y;
+          const distance = Math.sqrt(dx * dx + dy * dy);
+          
+          if (distance < properties.lineLength) {
+            const opacity = 1 - (distance / properties.lineLength);
+            ctx.lineWidth = 0.8;
+            ctx.strokeStyle = `rgba(29, 205, 159, ${opacity * 0.5})`;
+            ctx.beginPath();
+            ctx.moveTo(particles[i].x, particles[i].y);
+            ctx.lineTo(particles[j].x, particles[j].y);
+            ctx.stroke();
+          }
+        }
+        
+        // Mouse connection and repel
+        if (mouse.x && mouse.y) {
+          const dx = mouse.x - particles[i].x;
+          const dy = mouse.y - particles[i].y;
+          const distance = Math.sqrt(dx * dx + dy * dy);
+          
+          if (distance < properties.lineLength * 1.5) {
+            const opacity = 1 - (distance / (properties.lineLength * 1.5));
+            ctx.lineWidth = 1;
+            ctx.strokeStyle = `rgba(29, 205, 159, ${opacity * 0.8})`;
+            ctx.beginPath();
+            ctx.moveTo(particles[i].x, particles[i].y);
+            ctx.lineTo(mouse.x, mouse.y);
+            ctx.stroke();
+            
+            // Mouse push effect
+            const pushRadius = 100;
+            if (distance < pushRadius) {
+              const force = (pushRadius - distance) / pushRadius;
+              particles[i].x -= (dx / distance) * force * 2;
+              particles[i].y -= (dy / distance) * force * 2;
+            }
+          }
+        }
+      }
+    }
+
+    function animate() {
+      ctx.clearRect(0, 0, width, height);
+      for (let i = 0; i < particles.length; i++) {
+        particles[i].update();
+        particles[i].draw();
+      }
+      drawLines();
+      requestAnimationFrame(animate);
+    }
+
+    function init() {
+      for (let i = 0; i < properties.particleCount; i++) {
+        particles.push(new Particle());
+      }
+    }
+
+    init();
+    animate();
+  }
 });
