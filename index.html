@@ -1,854 +1,651 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="id">
 
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Web Portofolio - Web Developer</title>
+  <title>Irgi Muhammad Fadll — Portfolio</title>
+  <meta name="description"
+    content="Portfolio Irgi Muhammad Fadll — Mahasiswa Teknik Informatika & Full Stack Web Developer (Laravel, CodeIgniter 4, React, Data Science & AI)." />
+  <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600;800&display=swap" rel="stylesheet">
+  <link
+    href="https://fonts.googleapis.com/css2?family=Montserrat:wght@900&family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=Space+Grotesk:wght@600;700&display=swap"
+    rel="stylesheet">
   <link href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css" rel="stylesheet">
   <link rel="stylesheet" href="./style.css">
 </head>
 
 <body>
-  <canvas id="bg-canvas"></canvas>
-  <!-- Background Animated Elements -->
-  <div class="bg-elements">
-    <div class="glow-orb orb-1"></div>
-    <div class="glow-orb orb-2"></div>
-    <div class="glow-orb orb-3"></div>
+  <!-- =========================================================
+       FLOATING ADAPTIVE PILL NAVBAR + PERCHED MASCOT
+       ========================================================= -->
+  <header class="floating-nav-wrap" id="floatingNavWrap">
+    <nav class="floating-nav nav-dark" id="floatingNav" aria-label="Main Navigation">
+      <!-- Sliding Royal Blue Active Pill + Cute Perched Mascot -->
+      <div class="nav-active-pill" id="navActivePill" aria-hidden="true">
+        <div class="nav-mascot" title="Hi!">
+          <svg viewBox="0 0 48 42" fill="none" xmlns="http://www.w3.org/2000/svg" class="mascot-svg">
+            <!-- Soft white ghost/blob body -->
+            <path
+              d="M24 4C13.5 4 7 11.2 7 21.5V33.5C7 35.8 9.6 37 11.4 35.6L14.8 33C15.9 32.1 17.5 32.1 18.6 33L21.9 35.5C23.1 36.4 24.9 36.4 26.1 35.5L29.4 33C30.5 32.1 32.1 32.1 33.2 33L36.6 35.6C38.4 37 41 35.8 41 33.5V21.5C41 11.2 34.5 4 24 4Z"
+              fill="#FFFFFF" />
+            <!-- Eyes -->
+            <circle cx="18.2" cy="19.5" r="2.3" fill="#0F172A" />
+            <circle cx="29.8" cy="19.5" r="2.3" fill="#0F172A" />
+            <!-- Eye shine -->
+            <circle cx="17.5" cy="18.7" r="0.8" fill="#FFFFFF" />
+            <circle cx="29.1" cy="18.7" r="0.8" fill="#FFFFFF" />
+            <!-- Blushing pink cheeks -->
+            <ellipse cx="13.8" cy="23.2" rx="2.6" ry="1.5" fill="#F472B6" opacity="0.85" />
+            <ellipse cx="34.2" cy="23.2" rx="2.6" ry="1.5" fill="#F472B6" opacity="0.85" />
+            <!-- Tiny happy smile -->
+            <path d="M21.5 23.2C22.4 24.6 25.6 24.6 26.5 23.2" stroke="#0F172A" stroke-width="1.8"
+              stroke-linecap="round" />
+          </svg>
+        </div>
+      </div>
+
+      <a href="#Home" class="nav-link active" data-section="Home">Home</a>
+      <a href="#About" class="nav-link" data-section="About">About</a>
+      <a href="#Portofolio" class="nav-link" data-section="Portofolio">Portfolio</a>
+      <a href="#Contact" class="nav-link" data-section="Contact">Contact</a>
+    </nav>
+  </header>
+
+  <!-- =========================================================
+       MAIN PORTFOLIO VIEW
+       ========================================================= -->
+  <main id="mainContent">
+
+    <!-- SECTION 1: 5-LAYER SCROLL PARALLAX HERO -->
+    <section id="Home" class="hero-parallax-section">
+      <div class="hero-sticky-stage">
+
+        <!-- Layer 1: Starry Night Sky + Glowing Orbital Moon & Horizon Beams -->
+        <div class="parallax-layer layer-sky" id="layerSky">
+          <svg class="hero-svg" viewBox="0 0 1440 900" preserveAspectRatio="xMidYMid slice"
+            xmlns="http://www.w3.org/2000/svg">
+            <defs>
+              <radialGradient id="skyGrad" cx="50%" cy="24%" r="78%">
+                <stop offset="0%" stop-color="#172554" />
+                <stop offset="48%" stop-color="#090d24" />
+                <stop offset="100%" stop-color="#030712" />
+              </radialGradient>
+              <radialGradient id="moonGlow" cx="50%" cy="50%" r="50%">
+                <stop offset="0%" stop-color="#e0f2fe" stop-opacity="0.92" />
+                <stop offset="32%" stop-color="#3c84f6" stop-opacity="0.4" />
+                <stop offset="70%" stop-color="#2c67ed" stop-opacity="0.12" />
+                <stop offset="100%" stop-color="#2c67ed" stop-opacity="0" />
+              </radialGradient>
+              <linearGradient id="beamGrad" x1="0" y1="1" x2="0" y2="0">
+                <stop offset="0%" stop-color="#3c84f6" stop-opacity="0.28" />
+                <stop offset="100%" stop-color="#3c84f6" stop-opacity="0" />
+              </linearGradient>
+            </defs>
+            <rect width="1440" height="900" fill="url(#skyGrad)" />
+            <!-- Subtle orbital tech rings -->
+            <circle cx="720" cy="250" r="190" fill="none" stroke="#60a5fa" stroke-opacity="0.12" stroke-width="1"
+              stroke-dasharray="6 10" />
+            <circle cx="720" cy="250" r="270" fill="none" stroke="#3c84f6" stroke-opacity="0.08" stroke-width="1" />
+            <!-- Moon halo & disc -->
+            <circle cx="720" cy="250" r="235" fill="url(#moonGlow)" />
+            <circle cx="720" cy="250" r="64" fill="#f8fafc" opacity="0.92" />
+            <!-- Subtle vertical city sky-beams -->
+            <polygon points="360,720 385,720 420,240 325,240" fill="url(#beamGrad)" opacity="0.55" />
+            <polygon points="1030,720 1058,720 1100,220 990,220" fill="url(#beamGrad)" opacity="0.55" />
+            <polygon points="708,720 732,720 755,140 685,140" fill="url(#beamGrad)" opacity="0.45" />
+            <!-- Starfield -->
+            <g fill="#ffffff">
+              <circle cx="120" cy="95" r="1.4" opacity="0.8" />
+              <circle cx="240" cy="180" r="1.8" opacity="0.6" />
+              <circle cx="330" cy="70" r="1.2" opacity="0.9" />
+              <circle cx="445" cy="145" r="1.6" opacity="0.7" />
+              <circle cx="520" cy="65" r="1.1" opacity="0.85" />
+              <circle cx="610" cy="120" r="1.5" opacity="0.55" />
+              <circle cx="845" cy="90" r="1.7" opacity="0.8" />
+              <circle cx="960" cy="155" r="1.3" opacity="0.7" />
+              <circle cx="1060" cy="80" r="2.0" opacity="0.85" />
+              <circle cx="1180" cy="140" r="1.4" opacity="0.65" />
+              <circle cx="1290" cy="95" r="1.6" opacity="0.9" />
+              <circle cx="1365" cy="210" r="1.2" opacity="0.7" />
+              <circle cx="170" cy="285" r="1.5" opacity="0.55" />
+              <circle cx="390" cy="260" r="1.2" opacity="0.6" />
+              <circle cx="1020" cy="245" r="1.5" opacity="0.65" />
+              <circle cx="1235" cy="295" r="1.3" opacity="0.5" />
+            </g>
+          </svg>
+        </div>
+
+        <!-- Layer 2: Futuristic Tech Skyline & Megastructures -->
+        <div class="parallax-layer layer-mountain" id="layerMountain">
+          <svg class="hero-svg" viewBox="0 0 1440 900" preserveAspectRatio="xMidYMax slice"
+            xmlns="http://www.w3.org/2000/svg">
+            <defs>
+              <linearGradient id="cityBack" x1="0" y1="0" x2="0" y2="1">
+                <stop offset="0%" stop-color="#1e3a8a" stop-opacity="0.72" />
+                <stop offset="100%" stop-color="#050816" />
+              </linearGradient>
+              <linearGradient id="cityMain" x1="0" y1="0" x2="0" y2="1">
+                <stop offset="0%" stop-color="#1e293b" />
+                <stop offset="52%" stop-color="#0f172a" />
+                <stop offset="100%" stop-color="#030712" />
+              </linearGradient>
+              <linearGradient id="neonEdge" x1="0" y1="0" x2="0" y2="1">
+                <stop offset="0%" stop-color="#93c5fd" stop-opacity="0.9" />
+                <stop offset="60%" stop-color="#2c67ed" stop-opacity="0.45" />
+                <stop offset="100%" stop-color="#2c67ed" stop-opacity="0" />
+              </linearGradient>
+              <radialGradient id="horizonGlow" cx="50%" cy="100%" r="55%">
+                <stop offset="0%" stop-color="#2c67ed" stop-opacity="0.34" />
+                <stop offset="100%" stop-color="#030712" stop-opacity="0" />
+              </radialGradient>
+            </defs>
+
+            <!-- Soft blue city horizon haze -->
+            <rect x="0" y="420" width="1440" height="480" fill="url(#horizonGlow)" />
+
+            <!-- Distant Tech Skyline Silhouette -->
+            <g fill="url(#cityBack)">
+              <rect x="30" y="510" width="68" height="390" />
+              <polygon points="115,470 185,435 185,900 115,900" />
+              <rect x="205" y="495" width="76" height="405" />
+              <polygon points="300,405 350,375 395,405 395,900 300,900" />
+              <rect x="420" y="465" width="84" height="435" />
+              <polygon points="530,390 585,365 620,390 620,900 530,900" />
+              <!-- Central distant supertall spire -->
+              <polygon points="695,355 720,275 745,355 760,900 680,900" />
+              <rect x="719" y="210" width="2" height="70" fill="#93c5fd" opacity="0.7" />
+              <circle cx="720" cy="210" r="3" fill="#60a5fa" />
+              <polygon points="815,385 870,355 910,385 910,900 815,900" />
+              <rect x="935" y="460" width="86" height="440" />
+              <polygon points="1045,395 1105,365 1140,395 1140,900 1045,900" />
+              <rect x="1165" y="480" width="78" height="420" />
+              <polygon points="1260,445 1335,475 1335,900 1260,900" />
+              <rect x="1352" y="505" width="75" height="395" />
+            </g>
+
+            <!-- Midground Futuristic Monoliths & Sky-Bridges -->
+            <g fill="url(#cityMain)">
+              <!-- Left slanted tower -->
+              <polygon points="145,540 240,485 268,510 268,900 145,900" />
+              <!-- Left-center twin tech towers + skybridge -->
+              <polygon points="335,455 415,425 435,455 435,900 335,900" />
+              <rect x="470" y="495" width="88" height="405" />
+              <rect x="430" y="545" width="46" height="10" fill="#1e3a8a" />
+              <rect x="430" y="549" width="46" height="2" fill="#60a5fa" opacity="0.8" />
+              <!-- Center-right stepped arcology -->
+              <polygon points="885,485 965,450 985,485 985,900 885,900" />
+              <polygon points="1015,435 1095,465 1095,900 1015,900" />
+              <rect x="980" y="535" width="40" height="10" fill="#1e3a8a" />
+              <rect x="980" y="539" width="40" height="2" fill="#60a5fa" opacity="0.8" />
+              <!-- Right angular megastructure -->
+              <polygon points="1165,505 1265,465 1295,505 1295,900 1165,900" />
+            </g>
+
+            <!-- Glowing Neon Architectural Edge Strips & Window Grids -->
+            <g>
+              <!-- Vertical edge highlights -->
+              <rect x="238" y="485" width="2.5" height="280" fill="url(#neonEdge)" />
+              <rect x="413" y="425" width="2.5" height="340" fill="url(#neonEdge)" />
+              <rect x="556" y="495" width="2" height="260" fill="url(#neonEdge)" />
+              <rect x="886" y="485" width="2.5" height="290" fill="url(#neonEdge)" />
+              <rect x="1016" y="435" width="2.5" height="330" fill="url(#neonEdge)" />
+              <rect x="1263" y="465" width="2.5" height="290" fill="url(#neonEdge)" />
+
+              <!-- Glowing cyan/blue window lines -->
+              <g fill="#60a5fa" opacity="0.55">
+                <rect x="168" y="555" width="42" height="2.5" rx="1" />
+                <rect x="168" y="575" width="52" height="2.5" rx="1" />
+                <rect x="168" y="595" width="36" height="2.5" rx="1" />
+                <rect x="168" y="615" width="48" height="2.5" rx="1" />
+                <rect x="355" y="485" width="46" height="2.5" rx="1" />
+                <rect x="355" y="505" width="34" height="2.5" rx="1" />
+                <rect x="355" y="525" width="50" height="2.5" rx="1" />
+                <rect x="355" y="565" width="42" height="2.5" rx="1" />
+                <rect x="355" y="585" width="48" height="2.5" rx="1" />
+                <rect x="488" y="520" width="48" height="2.5" rx="1" />
+                <rect x="488" y="540" width="32" height="2.5" rx="1" />
+                <rect x="488" y="580" width="44" height="2.5" rx="1" />
+                <rect x="905" y="510" width="48" height="2.5" rx="1" />
+                <rect x="905" y="530" width="38" height="2.5" rx="1" />
+                <rect x="905" y="570" width="52" height="2.5" rx="1" />
+                <rect x="905" y="590" width="40" height="2.5" rx="1" />
+                <rect x="1032" y="490" width="44" height="2.5" rx="1" />
+                <rect x="1032" y="510" width="36" height="2.5" rx="1" />
+                <rect x="1032" y="555" width="48" height="2.5" rx="1" />
+                <rect x="1032" y="575" width="38" height="2.5" rx="1" />
+                <rect x="1192" y="535" width="50" height="2.5" rx="1" />
+                <rect x="1192" y="555" width="36" height="2.5" rx="1" />
+                <rect x="1192" y="575" width="46" height="2.5" rx="1" />
+                <rect x="1192" y="595" width="42" height="2.5" rx="1" />
+              </g>
+              <!-- Rooftop beacon dots -->
+              <circle cx="414" cy="425" r="2.8" fill="#93c5fd" />
+              <circle cx="1017" cy="435" r="2.8" fill="#93c5fd" />
+              <circle cx="240" cy="485" r="2.4" fill="#60a5fa" />
+              <circle cx="1264" cy="465" r="2.4" fill="#60a5fa" />
+            </g>
+          </svg>
+        </div>
+
+        <!-- Layer 3: Giant Rising Headline (Between Tech Skyline & Foreground Subject!) -->
+        <div class="parallax-layer layer-title" id="layerTitle">
+          <div class="hero-headline-wrap">
+            <span class="hero-kicker">IRGI MUHAMMAD FADLL</span>
+            <h1 class="hero-massive-title">WELCOME TO MY<br>PORTOFOLIO</h1>
+          </div>
+        </div>
+
+        <!-- Layer 4: Foreground Tech Rooftop Overlook + Back-Facing Photo Cutout -->
+        <div class="parallax-layer layer-subject" id="layerSubject">
+          <svg class="hero-svg" viewBox="0 0 1440 900" preserveAspectRatio="xMidYMax slice"
+            xmlns="http://www.w3.org/2000/svg">
+            <defs>
+              <linearGradient id="deckRim" x1="0" y1="0" x2="1" y2="0">
+                <stop offset="0%" stop-color="#2c67ed" stop-opacity="0" />
+                <stop offset="50%" stop-color="#60a5fa" stop-opacity="0.6" />
+                <stop offset="100%" stop-color="#2c67ed" stop-opacity="0" />
+              </linearGradient>
+            </defs>
+            <!-- Sleek geometric rooftop observation deck -->
+            <polygon points="0,770 340,722 1100,722 1440,770 1440,900 0,900" fill="#050814" />
+            <polygon points="180,795 440,750 1000,750 1260,795 1440,900 0,900" fill="#030712" />
+            <!-- Glowing architectural glass-rail edge -->
+            <line x1="340" y1="722" x2="1100" y2="722" stroke="url(#deckRim)" stroke-width="2" />
+            <line x1="440" y1="750" x2="1000" y2="750" stroke="url(#deckRim)" stroke-width="1.2" opacity="0.55" />
+          </svg>
+          <img src="./assets/poto-belakang.png" alt="Irgi Muhammad Fadll" id="heroSubjectImg"
+            class="hero-subject-img" />
+        </div>
+
+        <!-- Layer 5: Outermost Foreground Skyscraper Framing (Zooms & Fades on Scroll) -->
+        <div class="parallax-layer layer-forest" id="layerForest">
+          <svg class="hero-svg" viewBox="0 0 1440 900" preserveAspectRatio="xMidYMid slice"
+            xmlns="http://www.w3.org/2000/svg">
+            <!-- Left foreground dark skyscraper + spire -->
+            <g fill="#02050e">
+              <polygon points="-20,900 -20,140 115,210 145,900" />
+              <polygon points="95,900 105,360 198,405 225,900" opacity="0.95" />
+              <rect x="64" y="95" width="3" height="80" fill="#02050e" />
+              <circle cx="65.5" cy="95" r="3" fill="#3c84f6" opacity="0.85" />
+              <!-- Subtle glowing edge on left foreground tower -->
+              <line x1="115" y1="210" x2="145" y2="900" stroke="#3c84f6" stroke-opacity="0.22" stroke-width="2" />
+              <line x1="198" y1="405" x2="225" y2="900" stroke="#60a5fa" stroke-opacity="0.16" stroke-width="1.5" />
+            </g>
+            <!-- Right foreground dark skyscraper + spire -->
+            <g fill="#02050e">
+              <polygon points="1460,900 1460,130 1325,205 1295,900" />
+              <polygon points="1345,900 1335,355 1242,400 1215,900" opacity="0.95" />
+              <rect x="1373" y="85" width="3" height="82" fill="#02050e" />
+              <circle cx="1374.5" cy="85" r="3" fill="#3c84f6" opacity="0.85" />
+              <!-- Subtle glowing edge on right foreground tower -->
+              <line x1="1325" y1="205" x2="1295" y2="900" stroke="#3c84f6" stroke-opacity="0.22" stroke-width="2" />
+              <line x1="1242" y1="400" x2="1215" y2="900" stroke="#60a5fa" stroke-opacity="0.16" stroke-width="1.5" />
+            </g>
+            <!-- Bottom vignette fade into About section -->
+            <defs>
+              <linearGradient id="bottomFade" x1="0" y1="0" x2="0" y2="1">
+                <stop offset="0%" stop-color="#030712" stop-opacity="0" />
+                <stop offset="100%" stop-color="#030712" stop-opacity="1" />
+              </linearGradient>
+            </defs>
+            <rect x="0" y="750" width="1440" height="150" fill="url(#bottomFade)" />
+          </svg>
+        </div>
+
+        <!-- Scroll Cue -->
+        <div class="hero-scroll-cue" id="heroScrollCue">
+          <span>Scroll to explore</span>
+          <i class='bx bx-chevron-down'></i>
+        </div>
+      </div>
+    </section>
+
+    <!-- =========================================================
+         DARK HALF WRAPPER (TOPOGRAPHIC DARK BACKGROUND)
+         ========================================================= -->
+    <div class="dark-zone topo-dark">
+
+      <!-- Cinematic Transition Bridge (Hero -> About) -->
+      <div class="hero-about-bridge" aria-hidden="true">
+        <div class="bridge-glow"></div>
+        <div class="bridge-line"></div>
+      </div>
+
+      <!-- SECTION 2 & 3: ABOUT ME + EDUCATION & EXPERIENCE -->
+      <section id="About" class="about-section">
+        <div class="section-header centered reveal-item about-top-title">
+          <h2 class="section-label text-white">About Me</h2>
+        </div>
+
+        <!-- 3-Column Hero Bio (Full Viewport Balance) -->
+        <div class="about-three-col">
+          <!-- Left: Name & View CV -->
+          <div class="about-col-left reveal-item reveal-left">
+            <p class="about-greeting">Hi, I'm</p>
+            <h3 class="about-name" id="aboutName">Irgi Muhammad<br>Fadll</h3>
+            <a href="./assets/CV.pdf" target="_blank" id="viewCvBtn" class="btn-royal about-cta-btn">
+              <i class='bx bx-file'></i>
+              <span>View CV</span>
+            </a>
+          </div>
+
+          <!-- Center: Cutout Portrait fading smoothly into dark bg -->
+          <div class="about-col-center reveal-item reveal-scale">
+            <div class="portrait-frame">
+              <div class="portrait-glow"></div>
+              <img src="./assets/fotosaya.png" alt="Irgi Muhammad Fadll" id="aboutPortrait" class="portrait-img" />
+              <div class="portrait-fade"></div>
+            </div>
+          </div>
+
+          <!-- Right: Bio & View Projects -->
+          <div class="about-col-right reveal-item reveal-right">
+            <p class="about-bio-text" id="aboutBioText"></p>
+            <a href="#Portofolio" class="btn-royal about-cta-btn">
+              <i class='bx bx-code-alt'></i>
+              <span>View Projects</span>
+            </a>
+          </div>
+        </div>
+
+        <!-- SECTION 3: DUAL TIMELINES (EDUCATION & EXPERIENCE) -->
+        <div class="timelines-grid">
+          <!-- Education Column -->
+          <div class="timeline-col reveal-item">
+            <div class="timeline-col-header">
+              <i class='bx bxs-graduation'></i>
+              <h3>Education</h3>
+            </div>
+            <div class="timeline-list" id="educationTimeline"></div>
+          </div>
+
+          <!-- Experience Column (Scrollable Masked Container) -->
+          <div class="timeline-col reveal-item">
+            <div class="timeline-col-header">
+              <i class='bx bxs-briefcase'></i>
+              <h3>Experience</h3>
+              <span class="timeline-hint">Klik item untuk detail</span>
+            </div>
+            <div class="timeline-scroll-mask">
+              <div class="timeline-list timeline-scrollable" id="experienceTimeline"></div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- SECTION 4: INTERACTIVE 3D GLASSMORPHIC FOLDER CARDS -->
+      <section class="folders-section container-xl">
+        <div class="folders-grid" id="foldersGrid">
+          <!-- Rendered dynamically from data.js -->
+        </div>
+      </section>
+
+      <!-- SECTION 5: FULL-WIDTH KINETIC TYPOGRAPHY TRANSITION (ZOOM INTO R -> WHITE) -->
+      <section class="kinetic-banner-section" id="kineticBannerSection" aria-label="Portofolio Kinetic Banner">
+        <div class="kinetic-sticky-stage">
+          <div class="kinetic-word" id="kineticWord" role="radiogroup" aria-label="PORTOFOLIO">
+            <!-- 10 interactive letters rendered via JS -->
+          </div>
+          <div class="kinetic-whiteout" id="kineticWhiteout" aria-hidden="true"></div>
+        </div>
+      </section>
+
+    </div><!-- End Dark Zone -->
+
+    <!-- =========================================================
+         LIGHT HALF WRAPPER (TOPOGRAPHIC LIGHT BACKGROUND)
+         ========================================================= -->
+    <div class="light-zone topo-light">
+
+      <!-- SECTION 6: PORTFOLIO SHOWCASE -->
+      <section id="Portofolio" class="portfolio-section">
+        <div class="container-xl">
+          <div class="section-header centered reveal-item">
+            <h2 class="section-label text-dark">Portofolio</h2>
+          </div>
+
+          <!-- Segmented Category Tabs -->
+          <div class="segmented-tabs-wrap reveal-item">
+            <div class="segmented-tabs" role="tablist" aria-label="Portfolio Categories">
+              <button class="seg-tab active" data-tab="projects" role="tab" aria-selected="true">
+                <i class='bx bx-code-alt'></i>
+                <span>Projects</span>
+              </button>
+              <button class="seg-tab" data-tab="certificates" role="tab" aria-selected="false">
+                <i class='bx bx-award'></i>
+                <span>Certificates</span>
+              </button>
+              <button class="seg-tab" data-tab="awards" role="tab" aria-selected="false">
+                <i class='bx bx-trophy'></i>
+                <span>Awards</span>
+              </button>
+            </div>
+          </div>
+        </div>
+
+        <!-- Full-Width Horizontal Carousel -->
+        <div class="showcase-carousel-wrap reveal-item">
+          <button class="carousel-nav-btn prev" id="carouselPrev" aria-label="Previous">
+            <i class='bx bx-chevron-left'></i>
+          </button>
+
+          <div class="showcase-viewport" id="showcaseViewport">
+            <div class="showcase-track" id="showcaseTrack">
+              <!-- Cards rendered dynamically -->
+            </div>
+          </div>
+
+          <button class="carousel-nav-btn next" id="carouselNext" aria-label="Next">
+            <i class='bx bx-chevron-right'></i>
+          </button>
+        </div>
+
+        <div class="carousel-dots" id="carouselDots"></div>
+      </section>
+
+      <!-- SECTION 7: SCATTERED PHOTO COLLAGE GALLERY (SCROLL ZOOM & FADE) -->
+      <section class="gallery-section" id="gallerySection" aria-label="Photo Gallery">
+        <div class="gallery-sticky-stage">
+          <div class="scattered-gallery" id="scatteredGallery">
+            <!-- 9 borderless tilted photo cards rendered via JS -->
+          </div>
+        </div>
+      </section>
+
+      <!-- SECTION 8: CONTACT & GUESTBOOK COMMENTS -->
+      <section id="Contact" class="contact-section container-xl">
+        <div class="section-header centered reveal-item">
+          <h2 class="section-label text-dark">Hubungi Saya</h2>
+        </div>
+
+        <div class="contact-asymmetric-grid">
+          <!-- Left Column (~38%): Card 1 (Hubungi) + Card 3 (Find Me + bawah.jpg) -->
+          <div class="contact-col-stack">
+            <!-- Card 1: Hubungi -->
+            <div class="light-card contact-card-hubungi reveal-item">
+              <h3 class="contact-card-title">Hubungi</h3>
+              <p class="contact-card-sub">Ada ide proyek, kolaborasi, atau sekadar ingin menyapa? Kirim pesan langsung ke
+                saya.</p>
+
+              <form id="contactForm" class="contact-form">
+                <div class="input-group-light">
+                  <i class='bx bx-user'></i>
+                  <input type="text" id="contactName" placeholder="Nama Anda" required />
+                </div>
+                <div class="input-group-light">
+                  <i class='bx bx-envelope'></i>
+                  <input type="email" id="contactEmail" placeholder="Email Anda" required />
+                </div>
+                <div class="input-group-light textarea-group">
+                  <i class='bx bx-message-square-detail'></i>
+                  <textarea id="contactMessage" rows="4" placeholder="Pesan Anda" required></textarea>
+                </div>
+                <button type="submit" class="btn-royal btn-full">
+                  <i class='bx bx-send'></i>
+                  <span>Kirim Pesan</span>
+                </button>
+              </form>
+            </div>
+
+            <!-- Card 3: Find Me + Event Photo (assets/snapshot/bawah.jpg) -->
+            <div class="light-card contact-card-findme reveal-item">
+              <h3 class="contact-card-title">Find Me</h3>
+              <div class="find-me-list" id="findMeList"></div>
+
+              <div class="contact-event-photo">
+                <img src="./assets/snapshot/bawah.jpg" alt="Activity highlight" id="contactEventImg" />
+              </div>
+            </div>
+          </div>
+
+          <!-- Right Column (~62%): Card 2 (Tulis Komentar) + Card 4 (Komentar) -->
+          <div class="contact-col-stack">
+            <!-- Card 2: Tulis Komentar -->
+            <div class="light-card guestbook-card reveal-item">
+              <div class="guestbook-header">
+                <div class="guestbook-icon-badge">
+                  <i class='bx bx-message-rounded-dots'></i>
+                </div>
+                <div>
+                  <h3 class="guestbook-title">Tulis Komentar</h3>
+                  <p class="guestbook-sub">Tinggalkan kesan, pesan, atau dukungan Anda di sini.</p>
+                </div>
+              </div>
+
+              <form id="commentForm" class="guestbook-form">
+                <div class="form-field">
+                  <label for="commentAuthor">Nama</label>
+                  <input type="text" id="commentAuthor" class="input-light-plain" placeholder="Masukkan nama Anda"
+                    required />
+                </div>
+
+                <div class="form-field">
+                  <label for="commentBody">Komentar</label>
+                  <textarea id="commentBody" class="input-light-plain" rows="3"
+                    placeholder="Tulis komentar Anda di sini..." required></textarea>
+                </div>
+
+                <div class="form-field">
+                  <label>Foto Profil <span class="opt-label">(Opsional, maks. 5MB)</span></label>
+                  <label for="commentAvatarInput" class="upload-dropzone" id="avatarDropzone">
+                    <i class='bx bx-cloud-upload'></i>
+                    <span id="avatarFileName">Choose Profile Photo</span>
+                    <input type="file" id="commentAvatarInput" accept="image/*" hidden />
+                  </label>
+                </div>
+
+                <button type="submit" class="btn-royal btn-full">
+                  <i class='bx bx-paper-plane'></i>
+                  <span>Kirim Komentar</span>
+                </button>
+              </form>
+            </div>
+
+            <!-- Card 4: Daftar Komentar -->
+            <div class="light-card comments-list-card reveal-item">
+              <div class="comments-feed-header">
+                <div class="comments-title-row">
+                  <div class="guestbook-icon-badge sm">
+                    <i class='bx bx-conversation'></i>
+                  </div>
+                  <h4>Komentar (<span id="commentCount">0</span>)</h4>
+                </div>
+              </div>
+              <div class="comments-feed-body">
+                <div class="comments-feed" id="commentsFeed"></div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- SECTION 9: MINIMAL FOOTER -->
+      <footer class="minimal-footer">
+        <p>&copy; 2026 <span class="footer-brand">Irgi Muhammad Fadll</span>. All Rights Reserved.</p>
+      </footer>
+
+    </div><!-- End Light Zone -->
+  </main>
+
+  <!-- =========================================================
+       PROJECT DETAIL VIEW (/project/:slug — DARK MODE #030014)
+       ========================================================= -->
+  <div class="project-detail-overlay" id="projectDetailOverlay" aria-hidden="true">
+    <div class="project-detail-bg-glow"></div>
+    <div class="project-detail-container">
+      <!-- Top Breadcrumb Bar -->
+      <div class="detail-topbar">
+        <button class="detail-back-btn" id="detailBackBtn">
+          <i class='bx bx-arrow-back'></i>
+          <span>Back</span>
+        </button>
+        <div class="detail-breadcrumb">
+          <span>Projects</span>
+          <i class='bx bx-chevron-right'></i>
+          <strong id="detailBreadcrumbTitle">Project Title</strong>
+        </div>
+      </div>
+
+      <!-- 2-Column Content -->
+      <div class="detail-two-col">
+        <div class="detail-left">
+          <h1 class="detail-title" id="detailTitle">Project Title</h1>
+          <div class="detail-desc-wrap" id="detailDescWrap">
+            <p class="detail-desc" id="detailDesc"></p>
+            <ul class="detail-highlights" id="detailHighlights"></ul>
+          </div>
+          <button class="detail-expand-btn" id="detailExpandBtn">
+            <span>Lihat selengkapnya</span>
+            <i class='bx bx-chevron-down'></i>
+          </button>
+
+          <div class="detail-action-row" id="detailActionRow"></div>
+
+          <div class="detail-tech-section">
+            <h3 class="detail-tech-heading">
+              <i class='bx bx-code-alt'></i>
+              <span>Technologies Used</span>
+            </h3>
+            <div class="detail-tech-badges" id="detailTechBadges"></div>
+          </div>
+        </div>
+
+        <div class="detail-right">
+          <div class="detail-image-frame">
+            <img src="" alt="" id="detailImage" />
+          </div>
+        </div>
+      </div>
+
+      <footer class="detail-footer">
+        <p>&copy; 2026 <span class="footer-brand">Irgi Muhammad Fadll</span>. All Rights Reserved.</p>
+      </footer>
+    </div>
   </div>
 
-  <!-- Navigation -->
-  <nav class="navbar fade-in-down">
-    <div class="logo">Portofolio<span class="highlight">Web</span></div>
-    <ul class="nav-links">
-      <li><a href="#home">Home</a></li>
-      <li><a href="#about">About</a></li>
-      <li><a href="#projects">Projects</a></li>
-      <li><a href="#contact">Contact</a></li>
-    </ul>
-  </nav>
-
-  <!-- Hero Section -->
-  <section id="home" class="hero-centered">
-    <div class="hero-bg-text">PORTOFOLIO</div>
-    <div class="hero-centered-content">
-      <div class="hero-image-centered reveal-up delay-2">
-        <img src="assets/fotosaya.png" alt="Irgi Muhammad Fadll">
-      </div>
-      <div class="hero-text-centered reveal-up delay-3">
-        <h1 class="name">Irgi Muhammad Fadll</h1>
-        <h3 class="role">MAHASISWA TEKNIK INFORMATIKA & WEB DEVELOPER</h3>
-        <div class="hero-cta-centered reveal-up delay-4">
-          <a href="#projects" class="btn btn-primary-square">PORTOFOLIO</a>
-          <a href="assets/CV.pdf" download="CV_Irgi_Muhammad_Fadll.pdf" class="btn btn-dark-square"><i
-              class='bx bxs-file-pdf'></i> UNDUH CV</a>
-        </div>
+  <!-- =========================================================
+       LIGHTBOX MODAL (CERTIFICATES & AWARDS)
+       ========================================================= -->
+  <div class="lightbox-modal" id="lightboxModal" aria-hidden="true">
+    <div class="lightbox-backdrop" id="lightboxBackdrop"></div>
+    <div class="lightbox-dialog">
+      <button class="lightbox-close" id="lightboxClose" aria-label="Close">
+        <i class='bx bx-x'></i>
+      </button>
+      <img src="" alt="" id="lightboxImg" class="lightbox-img" />
+      <div class="lightbox-caption">
+        <h3 id="lightboxTitle"></h3>
+        <p id="lightboxIssuer"></p>
+        <p id="lightboxDesc" class="lightbox-extra-desc"></p>
       </div>
     </div>
-    <div class="hero-fg-text">PORTOFOLIO</div>
-  </section>
+  </div>
 
-  <!-- About Section -->
-  <section id="about" class="about section-padding">
-    <div class="section-title centered-title scroll-reveal">
-      <h2>About <span class="highlight">Me</span></h2>
-    </div>
-    <div class="about-content">
-      <div class="about-text glass-card scroll-reveal">
-        <p>Berstatus sebagai mahasiswa <strong>Teknik Informatika di UIN Sunan Gunung Djati Bandung</strong>, saya
-          adalah
-          seorang <em>aspiring</em> <strong>Web Developer</strong> yang memiliki antusiasme tinggi dalam membangun
-          aplikasi web modern dan interaktif. Selain mendalami pengembangan antarmuka pengguna (UI/UX), saya juga
-          menaruh minat yang sangat besar pada dunia <strong>Data Science</strong> dan <strong>Artificial
-            Intelligence (AI)</strong>.</p>
-        <br>
-        <p>Saat ini, saya aktif mempelajari pengolahan data menggunakan bahasa pemrograman <strong>Python</strong> dan
-          <strong>SQL</strong>, serta mendalami dasar-dasar <strong>Machine Learning</strong>. Keseriusan saya dalam
-          bidang ini dibuktikan melalui berbagai sertifikasi profesional yang telah saya raih dari institusi ternama
-          seperti <em>Dicoding Indonesia</em> dan <em>DBS Foundation</em>.
-        </p>
-        <br>
-        <p>Melalui kombinasi keahlian di bidang pengembangan perangkat lunak dan analisis data, saya berkomitmen
-          untuk membangun sistem cerdas yang tidak hanya memukau secara visual, tetapi juga kuat dan efisien
-          dalam pemrosesan data.</p>
-      </div>
-    </div>
-  </section>
-
-  <!-- Education Section -->
-  <section id="education" class="education section-padding">
-    <div class="section-title scroll-reveal" style="border: none; text-align: center; padding: 0;">
-      <h2>Education <span class="highlight">History</span></h2>
-    </div>
-    <div class="timeline-container scroll-reveal">
-      <div class="timeline-line"></div>
-
-      <!-- Item 1 (S1) -->
-      <div class="timeline-item">
-        <div class="timeline-content left">
-          <h3 class="degree">S1 Teknik Informatika</h3>
-          <span class="school highlight">UIN Sunan Gunung Djati Bandung</span>
-          <p class="desc">Fokus pada rekayasa perangkat lunak, pengembangan sistem informasi, dan teknologi kecerdasan
-            buatan.</p>
-        </div>
-        <div class="timeline-dot active"></div>
-        <div class="timeline-year right">
-          <span class="year-pill">2024 - Sekarang</span>
-        </div>
-      </div>
-
-      <!-- Item 2 (SMA) -->
-      <div class="timeline-item">
-        <div class="timeline-year left">
-          <span class="year-pill">2019 - 2023</span>
-        </div>
-        <div class="timeline-dot"></div>
-        <div class="timeline-content right">
-          <h3 class="degree">Sekolah Menengah Atas (SMA)</h3>
-          <span class="school highlight">SMA Terpadu Riyadlul Ulum</span>
-          <p class="desc">Masa di mana saya mulai melatih daya berpikir kritis, terstruktur, dan kemampuan problem
-            solving.</p>
-        </div>
-      </div>
-
-      <!-- Item 3 (SMP) -->
-      <div class="timeline-item">
-        <div class="timeline-content left">
-          <h3 class="degree">Sekolah Menengah Pertama (SMP)</h3>
-          <span class="school highlight">SMP Terpadu Riyadlul Ulum Wadda'wah</span>
-          <p class="desc">Masa transisi di mana ketertarikan saya terhadap observasi dan teknologi mulai tumbuh.</p>
-        </div>
-        <div class="timeline-dot"></div>
-        <div class="timeline-year right">
-          <span class="year-pill">2017 - 2019</span>
-        </div>
-      </div>
-
-      <!-- Item 4 (SD) -->
-      <div class="timeline-item">
-        <div class="timeline-year left">
-          <span class="year-pill">2011 - 2017</span>
-        </div>
-        <div class="timeline-dot"></div>
-        <div class="timeline-content right">
-          <h3 class="degree">Sekolah Dasar (SD)</h3>
-          <span class="school highlight">SDN 1 Cihaurbeuti</span>
-          <p class="desc">Masa di mana fondasi kedisiplinan, nilai moral, dan rasa ingin tahu saya mulai terbentuk.</p>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- Portfolio Section -->
-  <section id="projects" class="portfolio section-padding">
-    <div class="section-title scroll-reveal" style="text-align: left; border: none; padding: 0;">
-      <h2>PORTFOLIO <span class="highlight">SHOWCASE</span></h2>
-      <p class="desc" style="margin-top: 10px;">Eksplorasi proyek pengembangan, sertifikat penghargaan, dan pengalaman
-        profesional saya.</p>
-    </div>
-
-    <div class="portfolio-tabs scroll-reveal">
-      <button class="tab-btn active" data-target="tab-projects"><i class='bx bx-book-open'></i> Projects</button>
-      <button class="tab-btn" data-target="tab-certificates"><i class='bx bx-award'></i> Certificates &
-        Achievements</button>
-      <button class="tab-btn" data-target="tab-experience"><i class='bx bx-briefcase'></i> Experience</button>
-    </div>
-
-    <div class="portfolio-content">
-      <!-- Tab Projects -->
-      <div id="tab-projects" class="tab-pane active fade-in">
-        <div class="carousel-container scroll-reveal">
-          <button class="carousel-btn prev-btn" aria-label="Previous Project"><i
-              class='bx bx-chevron-left'></i></button>
-
-          <div class="projects-carousel">
-            <div class="projects-track">
-              <!-- Project 1 -->
-              <div class="project-card glass-card">
-                <div class="project-content">
-                  <div class="project-image">
-                    <!-- Ganti href/src di bawah dengan lokasi file gambar Anda -->
-                    <img src="assets/penyakit-kuning.png" alt="Cek Penyakit Kuning Preview"
-                      onerror="this.src='https://via.placeholder.com/600x400/050505/00ffcc?text=Cek+Penyakit+Kuning'">
-                  </div>
-                  <div class="project-header">
-                    <i class='bx bx-folder highlight-icon'></i>
-                    <div class="project-links">
-                      <a href="https://github.com/Irgimf/cek-penyakit-kuning" target="_blank" title="GitHub"><i
-                          class='bx bxl-github'></i></a>
-                      <a href="https://irgimf.github.io/cek-penyakit-kuning/" target="_blank" title="Live Preview"><i
-                          class='bx bx-link-external'></i></a>
-                    </div>
-                  </div>
-                  <h3 class="project-title">Cek Penyakit Kuning</h3>
-                  <p class="project-desc">Aplikasi web yang dirancang untuk membantu mendeteksi gejala penyakit kuning.
-                    Memiliki
-                    tampilan front-end yang interaktif dan user-friendly.</p>
-                  <div class="project-skills">
-                    <span class="skills-title">Tech Stack:</span>
-                    <div class="skills-icons">
-                      <div class="skill-icon-wrapper" data-tooltip="HTML5">
-                        <img src="https://skillicons.dev/icons?i=html&theme=dark" alt="HTML" />
-                      </div>
-                      <div class="skill-icon-wrapper" data-tooltip="CSS3">
-                        <img src="https://skillicons.dev/icons?i=css&theme=dark" alt="CSS" />
-                      </div>
-                      <div class="skill-icon-wrapper" data-tooltip="JavaScript">
-                        <img src="https://skillicons.dev/icons?i=js&theme=dark" alt="JavaScript" />
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              </div>
-
-              <!-- Project 2 -->
-              <div class="project-card glass-card">
-                <div class="project-content">
-                  <div class="project-image">
-                    <img src="assets/inkindo-web.png" alt="Web DPP INKINDO DKI Jakarta Preview"
-                      onerror="this.src='https://via.placeholder.com/600x400/050505/0A64A4?text=INKINDO+DKI+Web'">
-                  </div>
-                  <div class="project-header">
-                    <i class='bx bx-folder highlight-icon'></i>
-                    <div class="project-links">
-                      <a href="https://github.com/Irgimf/inkindo-dki-web" target="_blank" title="GitHub"><i
-                          class='bx bxl-github'></i></a>
-                      <a href="https://irgimf.github.io/inkindo-dki-web/" target="_blank" title="Live Preview"><i
-                          class='bx bx-link-external'></i></a>
-                    </div>
-                  </div>
-                  <h3 class="project-title">Web DPP INKINDO DKI Jakarta</h3>
-                  <p class="project-desc">Website profil resmi dan portal publik DPP INKINDO DKI Jakarta berbasis Laravel
-                    yang terintegrasi dengan SIM-INKINDO DKI via SSO. Dilengkapi direktori anggota &amp; SBU, portal
-                    mitra kerja, berita &amp; regulasi dinamis, fitur dwibahasa (ID/EN), serta Asisten Virtual AI berbasis
-                    Gemini API.</p>
-                  <div class="project-skills">
-                    <span class="skills-title">Tech Stack:</span>
-                    <div class="skills-icons">
-                      <div class="skill-icon-wrapper" data-tooltip="PHP">
-                        <img src="https://skillicons.dev/icons?i=php&theme=dark" alt="PHP" />
-                      </div>
-                      <div class="skill-icon-wrapper" data-tooltip="Laravel">
-                        <img src="https://skillicons.dev/icons?i=laravel&theme=dark" alt="Laravel" />
-                      </div>
-                      <div class="skill-icon-wrapper" data-tooltip="MySQL">
-                        <img src="https://skillicons.dev/icons?i=mysql&theme=dark" alt="MySQL" />
-                      </div>
-                      <div class="skill-icon-wrapper" data-tooltip="Tailwind CSS">
-                        <img src="https://skillicons.dev/icons?i=tailwind&theme=dark" alt="Tailwind CSS" />
-                      </div>
-                      <div class="skill-icon-wrapper" data-tooltip="Vite">
-                        <img src="https://skillicons.dev/icons?i=vite&theme=dark" alt="Vite" />
-                      </div>
-                      <div class="skill-icon-wrapper" data-tooltip="JavaScript">
-                        <img src="https://skillicons.dev/icons?i=js&theme=dark" alt="JavaScript" />
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              </div>
-
-              <!-- Project 3 -->
-              <div class="project-card glass-card">
-                <div class="project-content">
-                  <div class="project-image">
-                    <!-- Ganti href/src di bawah dengan lokasi file gambar Anda -->
-                    <img src="assets/dashboard-dapodik.png" alt="Web Dapodik Preview"
-                      onerror="this.src='https://via.placeholder.com/600x400/050505/0055ff?text=Web+Dapodik'">
-                  </div>
-                  <div class="project-header">
-                    <i class='bx bx-folder highlight-icon'></i>
-                    <div class="project-links">
-                      <a href="https://github.com/Irgimf/dashboard-dapodik" target="_blank" title="GitHub"><i
-                          class='bx bxl-github'></i></a>
-                      <a href="https://dashboard-dapodik.vercel.app" target="_blank" title="Live Preview"><i
-                          class='bx bx-link-external'></i></a>
-                    </div>
-                  </div>
-                  <h3 class="project-title">Web Dapodik Kota Bandung</h3>
-                  <p class="project-desc">Sistem informasi data pokok pendidikan terpadu untuk Kota Bandung. Menggunakan
-                    arsitektur full stack modern untuk manajemen data berskala besar.<br>
-                    <span class="skills-title" style="display:inline-block; margin-top:5px;">Demo Akun:</span> Username:
-                    viewer | Password: viewer
-                  </p>
-                  <div class="project-skills">
-                    <span class="skills-title">Tech Stack:</span>
-                    <div class="skills-icons">
-                      <div class="skill-icon-wrapper" data-tooltip="React">
-                        <img src="https://skillicons.dev/icons?i=react&theme=dark" alt="React" />
-                      </div>
-                      <div class="skill-icon-wrapper" data-tooltip="Tailwind CSS">
-                        <img src="https://skillicons.dev/icons?i=tailwind&theme=dark" alt="Tailwind CSS" />
-                      </div>
-                      <div class="skill-icon-wrapper" data-tooltip="Python">
-                        <img src="https://skillicons.dev/icons?i=python&theme=dark" alt="Python" />
-                      </div>
-                      <div class="skill-icon-wrapper" data-tooltip="FastAPI">
-                        <img src="https://skillicons.dev/icons?i=fastapi&theme=dark" alt="FastAPI" />
-                      </div>
-                      <div class="skill-icon-wrapper" data-tooltip="PostgreSQL">
-                        <img src="https://skillicons.dev/icons?i=postgres&theme=dark" alt="PostgreSQL" />
-                      </div>
-                      <div class="skill-icon-wrapper" data-tooltip="Vercel">
-                        <img src="https://skillicons.dev/icons?i=vercel&theme=dark" alt="Vercel" />
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              </div>
-
-              <!-- Project 4 (New) -->
-              <div class="project-card glass-card">
-                <div class="project-content">
-                  <div class="project-image">
-                    <img src="assets/sim-inkindo-dki.png" alt="SIM INKINDO DKI Preview"
-                      onerror="this.src='https://via.placeholder.com/600x400/050505/0A64A4?text=SIM+INKINDO+DKI'">
-                  </div>
-                  <div class="project-header">
-                    <i class='bx bx-folder highlight-icon'></i>
-                    <div class="project-links">
-                      <a href="https://github.com/Irgimf/sistem-manajemen-data-pt" target="_blank" title="GitHub"><i
-                          class='bx bxl-github'></i></a>
-                    </div>
-                  </div>
-                  <h3 class="project-title">SIM INKINDO DKI</h3>
-                  <p class="project-desc">Sistem Informasi &amp; Manajemen terpadu DPP INKINDO DKI Jakarta berbasis
-                    CodeIgniter 4 dan MySQL dengan RBAC (Admin, Anggota, Mitra Kerja) serta SSO. Mendukung manajemen data
-                    perusahaan &amp; SBU (JK/NJK), portal kemitraan, serta 8 modul Admin CMS dinamis untuk portal web
-                    resmi.</p>
-                  <div class="project-skills">
-                    <span class="skills-title">Tech Stack:</span>
-                    <div class="skills-icons">
-                      <div class="skill-icon-wrapper" data-tooltip="PHP">
-                        <img src="https://skillicons.dev/icons?i=php&theme=dark" alt="PHP" />
-                      </div>
-                      <div class="skill-icon-wrapper" data-tooltip="CodeIgniter">
-                        <img src="assets/codeigniter.svg" alt="CodeIgniter" />
-                      </div>
-                      <div class="skill-icon-wrapper" data-tooltip="MySQL">
-                        <img src="https://skillicons.dev/icons?i=mysql&theme=dark" alt="MySQL" />
-                      </div>
-                      <div class="skill-icon-wrapper" data-tooltip="Bootstrap">
-                        <img src="https://skillicons.dev/icons?i=bootstrap&theme=dark" alt="Bootstrap" />
-                      </div>
-                      <div class="skill-icon-wrapper" data-tooltip="JavaScript">
-                        <img src="https://skillicons.dev/icons?i=js&theme=dark" alt="JavaScript" />
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              </div>
-
-              <!-- Project 5 -->
-              <div class="project-card glass-card">
-                <div class="project-content">
-                  <div class="project-image">
-                    <img src="assets/sistem-pengawasan.png" alt="Sistem Pengawasan Parlemen Preview"
-                      onerror="this.src='https://via.placeholder.com/600x400/050505/0A64A4?text=Sistem+Pengawasan+Parlemen'">
-                  </div>
-                  <div class="project-header">
-                    <i class='bx bx-folder highlight-icon'></i>
-                    <div class="project-links">
-                      <a href="https://github.com/Irgimf/pengawasan-parlemen" target="_blank" title="GitHub"><i
-                          class='bx bxl-github'></i></a>
-                    </div>
-                  </div>
-                  <h3 class="project-title">Sistem Pengawasan Parlemen</h3>
-                  <p class="project-desc">Aplikasi web PWA end-to-end berbasis Laravel dan MySQL untuk pengelolaan
-                    laporan pengawasan Parlemen Remaja DPR RI oleh tim LSPP 306. Dilengkapi instalasi mobile mandiri,
-                    auto-generate dokumen PDF kustom, dan integrasi tanda tangan elektronik.</p>
-                  <div class="project-skills">
-                    <span class="skills-title">Tech Stack:</span>
-                    <div class="skills-icons">
-                      <div class="skill-icon-wrapper" data-tooltip="PHP">
-                        <img src="https://skillicons.dev/icons?i=php&theme=dark" alt="PHP" />
-                      </div>
-                      <div class="skill-icon-wrapper" data-tooltip="Laravel">
-                        <img src="https://skillicons.dev/icons?i=laravel&theme=dark" alt="Laravel" />
-                      </div>
-                      <div class="skill-icon-wrapper" data-tooltip="MySQL">
-                        <img src="https://skillicons.dev/icons?i=mysql&theme=dark" alt="MySQL" />
-                      </div>
-                      <div class="skill-icon-wrapper" data-tooltip="Tailwind CSS">
-                        <img src="https://skillicons.dev/icons?i=tailwind&theme=dark" alt="Tailwind CSS" />
-                      </div>
-                      <div class="skill-icon-wrapper" data-tooltip="JavaScript">
-                        <img src="https://skillicons.dev/icons?i=js&theme=dark" alt="JavaScript" />
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              </div>
-
-              <!-- Project 6 -->
-              <div class="project-card glass-card">
-                <div class="project-content">
-                  <div class="project-image">
-                    <img src="assets/cekduit.png" alt="Cekduit Preview"
-                      onerror="this.src='https://via.placeholder.com/600x400/050505/ff0055?text=Cekduit'">
-                  </div>
-                  <div class="project-header">
-                    <i class='bx bx-folder highlight-icon'></i>
-                    <div class="project-links">
-                      <a href="https://github.com/Irgimf/cekduit" target="_blank" title="GitHub"><i
-                          class='bx bxl-github'></i></a>
-                      <a href="https://cekduit.alwaysdata.net" target="_blank" title="Live Preview"><i
-                          class='bx bx-link-external'></i></a>
-                    </div>
-                  </div>
-                  <h3 class="project-title">Cekduit</h3>
-                  <p class="project-desc">Aplikasi web manajemen keuangan yang dibangun dengan PHP, Laravel 12, dan
-                    MySQL.
-                    Menampilkan visualisasi data statistik interaktif dengan Chart.js.</p>
-                  <div class="project-skills">
-                    <span class="skills-title">Tech Stack:</span>
-                    <div class="skills-icons">
-                      <div class="skill-icon-wrapper" data-tooltip="PHP">
-                        <img src="https://skillicons.dev/icons?i=php&theme=dark" alt="PHP" />
-                      </div>
-                      <div class="skill-icon-wrapper" data-tooltip="Laravel">
-                        <img src="https://skillicons.dev/icons?i=laravel&theme=dark" alt="Laravel" />
-                      </div>
-                      <div class="skill-icon-wrapper" data-tooltip="MySQL">
-                        <img src="https://skillicons.dev/icons?i=mysql&theme=dark" alt="MySQL" />
-                      </div>
-                      <div class="skill-icon-wrapper" data-tooltip="Bootstrap">
-                        <img src="https://skillicons.dev/icons?i=bootstrap&theme=dark" alt="Bootstrap" />
-                      </div>
-                      <div class="skill-icon-wrapper" data-tooltip="JavaScript">
-                        <img src="https://skillicons.dev/icons?i=js&theme=dark" alt="JavaScript" />
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              </div>
-
-              <!-- Project 7 -->
-              <div class="project-card glass-card">
-                <div class="project-content">
-                  <div class="project-image">
-                    <img src="assets/absolutecinema.png" alt="Absolute Cinema Preview"
-                      onerror="this.src='https://via.placeholder.com/600x400/050505/ff9900?text=Absolute+Cinema'">
-                  </div>
-                  <div class="project-header">
-                    <i class='bx bx-folder highlight-icon'></i>
-                    <div class="project-links">
-                      <a href="https://github.com/karimaulya/AbsoluteCinema" target="_blank" title="GitHub"><i
-                          class='bx bxl-github'></i></a>
-                      <a href="https://absolutecinema.adrianz.me/" target="_blank" title="Live Preview"><i
-                          class='bx bx-link-external'></i></a>
-                    </div>
-                  </div>
-                  <h3 class="project-title">Absolute Cinema</h3>
-                  <p class="project-desc">Aplikasi web PWA interaktif untuk menjelajahi katalog film, memberi rating,
-                    dan menulis ulasan. Di proyek ini, saya berada di divisi Service & API di mana saya bertanggung
-                    jawab mengimplementasikan logika integrasi dengan API eksternal TMDB dan mengatur routing
-                    controller.</p>
-                  <div class="project-skills">
-                    <span class="skills-title">Tech Stack:</span>
-                    <div class="skills-icons">
-                      <div class="skill-icon-wrapper" data-tooltip="Java">
-                        <img src="https://skillicons.dev/icons?i=java&theme=dark" alt="Java" />
-                      </div>
-                      <div class="skill-icon-wrapper" data-tooltip="Spring Boot">
-                        <img src="https://skillicons.dev/icons?i=spring&theme=dark" alt="Spring" />
-                      </div>
-                      <div class="skill-icon-wrapper" data-tooltip="MySQL">
-                        <img src="https://skillicons.dev/icons?i=mysql&theme=dark" alt="MySQL" />
-                      </div>
-                      <div class="skill-icon-wrapper" data-tooltip="JavaScript">
-                        <img src="https://skillicons.dev/icons?i=js&theme=dark" alt="JavaScript" />
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              </div>
-
-              <!-- Project 8 (Machine Learning) -->
-              <div class="project-card glass-card">
-                <div class="project-content">
-                  <div class="project-image">
-                    <img src="assets/ml-project.png" alt="Data Segmentation Preview"
-                      onerror="this.src='https://via.placeholder.com/600x400/050505/00ffcc?text=Machine+Learning'">
-                  </div>
-                  <div class="project-header">
-                    <i class='bx bx-folder highlight-icon'></i>
-                    <div class="project-links">
-                      <a href="https://github.com/Irgimf/data-segmentation-and-classification" target="_blank"
-                        title="GitHub"><i class='bx bxl-github'></i></a>
-                    </div>
-                  </div>
-                  <h3 class="project-title">Data Segmentation & Classification</h3>
-                  <p class="project-desc">Proyek submission akhir dari course Belajar Machine Learning di Dicoding.
-                    Menerapkan teknik machine learning untuk melakukan segmentasi dan klasifikasi data menggunakan
-                    Python.</p>
-                  <div class="project-skills">
-                    <span class="skills-title">Tech Stack:</span>
-                    <div class="skills-icons">
-                      <div class="skill-icon-wrapper" data-tooltip="Python">
-                        <img src="https://skillicons.dev/icons?i=python&theme=dark" alt="Python" />
-                      </div>
-                      <div class="skill-icon-wrapper" data-tooltip="TensorFlow">
-                        <img src="https://skillicons.dev/icons?i=tensorflow&theme=dark" alt="TensorFlow" />
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              </div>
-
-              <!-- Project 9 (Data Science) -->
-              <div class="project-card glass-card">
-                <div class="project-content">
-                  <div class="project-image">
-                    <img src="assets/dashboard-olist.png" alt="Dashboard Olist Preview"
-                      onerror="this.src='https://via.placeholder.com/600x400/050505/00ffcc?text=Data+Science'">
-                  </div>
-                  <div class="project-header">
-                    <i class='bx bx-folder highlight-icon'></i>
-                    <div class="project-links">
-                      <a href="https://github.com/Irgimf/Dashboard-Persebaran-Wilayah-Pelanggan-Olist" target="_blank"
-                        title="GitHub"><i class='bx bxl-github'></i></a>
-                    </div>
-                  </div>
-                  <h3 class="project-title">Dashboard Persebaran Pelanggan Olist</h3>
-                  <p class="project-desc">Proyek analisis data dan visualisasi interaktif mengenai persebaran wilayah
-                    pelanggan e-commerce Olist menggunakan Python.</p>
-                  <div class="project-skills">
-                    <span class="skills-title">Tech Stack & Libraries:</span>
-                    <div class="skills-icons">
-                      <div class="skill-icon-wrapper" data-tooltip="Python">
-                        <img src="https://skillicons.dev/icons?i=python&theme=dark" alt="Python" />
-                      </div>
-                      <div class="skill-icon-wrapper" data-tooltip="Pandas">
-                        <div
-                          style="display: flex; align-items: center; justify-content: center; width: 48px; height: 48px; background: #150458; border-radius: 12px; font-weight: bold; font-size: 14px; color: white;">
-                          PD</div>
-                      </div>
-                      <div class="skill-icon-wrapper" data-tooltip="NumPy">
-                        <div
-                          style="display: flex; align-items: center; justify-content: center; width: 48px; height: 48px; background: #013243; border-radius: 12px; font-weight: bold; font-size: 14px; color: white;">
-                          NP</div>
-                      </div>
-                      <div class="skill-icon-wrapper" data-tooltip="Matplotlib">
-                        <div
-                          style="display: flex; align-items: center; justify-content: center; width: 48px; height: 48px; background: #11557c; border-radius: 12px; font-weight: bold; font-size: 14px; color: white;">
-                          PLT</div>
-                      </div>
-                      <div class="skill-icon-wrapper" data-tooltip="Seaborn">
-                        <div
-                          style="display: flex; align-items: center; justify-content: center; width: 48px; height: 48px; background: #4C72B0; border-radius: 12px; font-weight: bold; font-size: 14px; color: white;">
-                          SNS</div>
-                      </div>
-                      <div class="skill-icon-wrapper" data-tooltip="Folium">
-                        <div
-                          style="display: flex; align-items: center; justify-content: center; width: 48px; height: 48px; background: #77B829; border-radius: 12px; font-weight: bold; font-size: 14px; color: white;">
-                          MAP</div>
-                      </div>
-                      <div class="skill-icon-wrapper" data-tooltip="Streamlit">
-                        <div
-                          style="display: flex; align-items: center; justify-content: center; width: 48px; height: 48px; background: #FF4B4B; border-radius: 12px; font-weight: bold; font-size: 14px; color: white;">
-                          ST</div>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-
-          <button class="carousel-btn next-btn" aria-label="Next Project"><i class='bx bx-chevron-right'></i></button>
-        </div>
-      </div> <!-- End Tab Projects -->
-
-      <!-- Tab Certificates -->
-      <div id="tab-certificates" class="tab-pane fade-in">
-        <div class="certificates-grid scroll-reveal">
-
-          <!-- Certificates Header -->
-          <div class="exp-category">
-            <h3><i class='bx bx-award'></i> Professional Certificates</h3>
-          </div>
-
-          <!-- Cert 1 -->
-          <div class="cert-card glass-card">
-            <div class="cert-img">
-              <img src="assets/sertifikat1.png" alt="Memulai Pemrograman dengan Python">
-            </div>
-            <div class="cert-info">
-              <h3>Memulai Pemrograman dengan Python (2026)</h3>
-              <p>Dicoding Indonesia x DBS Foundation</p>
-            </div>
-          </div>
-          <!-- Cert 2 -->
-          <div class="cert-card glass-card">
-            <div class="cert-img">
-              <img src="assets/sertifikat2.png" alt="Dasar SQL">
-            </div>
-            <div class="cert-info">
-              <h3>Belajar Dasar Structured Query Language (SQL) (2026)</h3>
-              <p>Dicoding Indonesia x DBS Foundation</p>
-            </div>
-          </div>
-          <!-- Cert 3 -->
-          <div class="cert-card glass-card">
-            <div class="cert-img">
-              <img src="assets/sertifikat3.png" alt="Strategi Pengembangan Diri">
-            </div>
-            <div class="cert-info">
-              <h3>Belajar Strategi Pengembangan Diri (2026)</h3>
-              <p>Dicoding Indonesia x DBS Foundation</p>
-            </div>
-          </div>
-          <!-- Cert 4 -->
-          <div class="cert-card glass-card">
-            <div class="cert-img">
-              <img src="assets/sertifikat4.png" alt="Berinovasi dengan AI">
-            </div>
-            <div class="cert-info">
-              <h3>Berinovasi dengan AI (2026)</h3>
-              <p>Kemenpora x Yayasan Plan International Indonesia</p>
-            </div>
-          </div>
-          <!-- Cert 5 -->
-          <div class="cert-card glass-card">
-            <div class="cert-img">
-              <img src="assets/sertifikat5.png" alt="Machine Learning">
-            </div>
-            <div class="cert-info">
-              <h3>Belajar Machine Learning untuk Pemula (2026)</h3>
-              <p>Dicoding Indonesia x DBS Foundation</p>
-            </div>
-          </div>
-          <!-- Cert 6 -->
-          <div class="cert-card glass-card">
-            <div class="cert-img">
-              <img src="assets/sertifikat6.png" alt="Data Science">
-            </div>
-            <div class="cert-info">
-              <h3>Belajar Dasar Data Science (2026)</h3>
-              <p>Dicoding Indonesia x DBS Foundation</p>
-            </div>
-          </div>
-
-          <!-- Cert 7 -->
-          <div class="cert-card glass-card">
-            <div class="cert-img">
-              <img src="assets/sertifikat7.png" alt="Fundamental Analisis Data"
-                onerror="this.src='https://via.placeholder.com/600x400/050505/00ffcc?text=Sertifikat'">
-            </div>
-            <div class="cert-info">
-              <h3>Belajar Fundamental Analisis Data (2026)</h3>
-              <p>Dicoding Indonesia x DBS Foundation</p>
-            </div>
-          </div>
-
-          <!-- Cert 8 -->
-          <div class="cert-card glass-card">
-            <div class="cert-img">
-              <img src="assets/linux.png" alt="Linux Essentials"
-                onerror="this.src='https://via.placeholder.com/600x400/050505/00ffcc?text=Linux+Essentials'">
-            </div>
-            <div class="cert-info">
-              <h3>Linux Essentials (2026)</h3>
-              <p>Cisco Networking Academy x NDG</p>
-            </div>
-          </div>
-
-          <!-- Achievements Header -->
-          <div class="exp-category" style="margin-top: 20px;">
-            <h3><i class='bx bx-trophy'></i> Achievements</h3>
-          </div>
-
-          <!-- Achievement 1 -->
-          <div class="cert-card glass-card achievement-card">
-            <div class="cert-img">
-              <img src="assets/penghargaan1.jpg" alt="POSPENAS IX">
-            </div>
-            <div class="cert-info">
-              <h3>Peserta Kontingen Jawa Barat - Cabang Film Pendek POSPENAS IX (2022)</h3>
-              <p>Direktorat Jenderal Pendidikan Islam, Kementerian Agama RI</p>
-              <p class="desc" style="margin-top: 10px;">Menjadi perwakilan kontingen Provinsi Jawa Barat dalam ajang
-                Pekan Olahraga dan Seni antar Pondok Pesantren Tingkat Nasional (POSPENAS) IX</p>
-            </div>
-          </div>
-        </div>
-      </div>
-
-      <!-- Tab Experience -->
-      <div id="tab-experience" class="tab-pane fade-in">
-        <div class="experience-list scroll-reveal">
-
-          <!-- Internship Header -->
-          <div class="exp-category">
-            <h3><i class='bx bx-briefcase-alt-2'></i> Internship</h3>
-          </div>
-
-          <!-- Internship 1 -->
-          <div class="exp-card glass-card" style="grid-column: 1 / -1;">
-            <div class="exp-header-top">
-              <div class="exp-icon"><i class='bx bxs-briefcase'></i></div>
-              <div class="exp-date">
-                <span class="year-pill-new">September 2026 – Desember 2026</span>
-              </div>
-            </div>
-            <div class="exp-title-group">
-              <h4>DPP INKINDO DKI JAKARTA</h4>
-              <span class="exp-role">Full Stack Developer Intern • Jakarta</span>
-            </div>
-            <div class="exp-desc" style="display: flex; flex-direction: column; gap: 8px;">
-              <div>• Merancang dan mengembangkan ekosistem dua aplikasi web terintegrasi—SIM-INKINDO DKI (CodeIgniter 4) dan Website Profil Resmi (Laravel)—dalam satu database MySQL (Single Source of Truth) yang terhubung melalui Single Sign-On (SSO) dan Role-Based Access Control (RBAC) untuk Admin, Anggota, serta Mitra Kerja.</div>
-              <div>• Membangun 8 modul Admin CMS dinamis, direktori anggota &amp; SBU (JK/NJK), portal kemitraan, fitur dwibahasa (ID/EN), serta Asisten Virtual berbasis Gemini API, sekaligus melakukan audit keamanan (CSRF, CAPTCHA, proteksi upload/XSS) dan optimasi performa (caching, indeks database, konversi otomatis WebP, eliminasi N+1 query).</div>
-              <div>• Memberikan dukungan teknis TI dan mengelola operasional acara tingkat provinsi maupun nasional, termasuk Rakerprov INKINDO DKI, rapat sekretariat DPN &amp; DPP, sosialisasi OSS-RBA, serta Bimtek Intensif Akselerasi AI untuk Jasa Konsultasi.</div>
-            </div>
-          </div>
-
-          <!-- Organization Header -->
-          <div class="exp-category" style="margin-top: 40px;">
-            <h3><i class='bx bx-buildings'></i> Organizations</h3>
-          </div>
-
-          <!-- Exp 1 -->
-          <div class="exp-card glass-card">
-            <div class="exp-header-top">
-              <div class="exp-icon"><i class='bx bxs-group'></i></div>
-              <div class="exp-date">
-                <span class="year-pill-new">2022 - 2023</span>
-              </div>
-            </div>
-            <div class="exp-title-group">
-              <h4>KOORDINATOR GERAKAN PRAMUKA</h4>
-              <span class="exp-role">Wakil Pradana</span>
-            </div>
-            <p class="exp-desc">Bertanggung jawab mendampingi Pradana dalam memimpin, mengoordinasikan, dan mengelola
-              manajemen tim Ambalan Hasan Muhammad di Pangkalan SMA Terpadu Riyadlul Ulum. Aktif merancang program kerja
-              kepanduan, mengawasi pelaksanaan kegiatan, serta memastikan tertib administrasi organisasi berjalan
-              efektif dengan predikat Sangat Baik.</p>
-          </div>
-
-          <!-- Exp 2 -->
-          <div class="exp-card glass-card">
-            <div class="exp-header-top">
-              <div class="exp-icon"><i class='bx bxs-group'></i></div>
-              <div class="exp-date">
-                <span class="year-pill-new">2022 - 2023</span>
-              </div>
-            </div>
-            <div class="exp-title-group">
-              <h4>Organisasi Santri Pesantren Condong (OSPC)</h4>
-              <span class="exp-role">Sekretaris</span>
-            </div>
-            <p class="exp-desc">Bertanggung jawab penuh atas pengelolaan administrasi, surat-menyurat, dan pengarsipan
-              dokumen untuk Organisasi Santri Pesantren Condong (organisasi intra-sekolah setingkat OSIS). Aktif
-              menyusun proposal kegiatan, berkoordinasi dengan seluruh divisi kepengurusan, serta membantu memfasilitasi
-              program kerja kedisiplinan dan pengembangan santri selama satu periode masa bakti.</p>
-          </div>
-
-          <!-- Volunteers Header -->
-          <div class="exp-category" style="margin-top: 40px;">
-            <h3><i class='bx bx-heart'></i> Volunteer</h3>
-          </div>
-
-          <!-- Exp 3 -->
-          <div class="exp-card glass-card">
-            <div class="exp-header-top">
-              <div class="exp-icon"><i class='bx bxs-group'></i></div>
-              <div class="exp-date">
-                <span class="year-pill-new">2025</span>
-              </div>
-            </div>
-            <div class="exp-title-group">
-              <h4>Cloud DevFest Bandung 2025</h4>
-              <span class="exp-role">Event Runner</span>
-            </div>
-            <p class="exp-desc">Served as an Event Runner for Google Cloud DevFest Bandung 2025, organized by Google
-              Developer Group Cloud (GDG Cloud) Bandung on December 6th, 2025. Supported the successful execution of the
-              event by coordinating on-site operations, managing session transitions, and assisting organizers,
-              speakers, and participants to ensure a smooth event flow.</p>
-          </div>
-
-          <!-- Exp 4 -->
-          <div class="exp-card glass-card">
-            <div class="exp-header-top">
-              <div class="exp-icon"><i class='bx bxs-group'></i></div>
-              <div class="exp-date">
-                <span class="year-pill-new">2025</span>
-              </div>
-            </div>
-            <div class="exp-title-group">
-              <h4>Informatics Futsal Competition 2025</h4>
-              <span class="exp-role">Divisi Acara</span>
-            </div>
-            <p class="exp-desc">Berperan aktif sebagai divisi acara dalam menyelenggarakan Turnamen Futsal tingkat
-              SMA/Sederajat se-Bandung Raya pada 5-6 September 2025. Bertanggung jawab dalam mengelola jalannya
-              pertandingan, memastikan jadwal acara terlaksana dengan baik, dan berkoordinasi dengan seluruh elemen
-              kepanitiaan demi kelancaran dan keberhasilan turnamen.</p>
-          </div>
-
-          <!-- Exp 5 -->
-          <div class="exp-card glass-card">
-            <div class="exp-header-top">
-              <div class="exp-icon"><i class='bx bxs-group'></i></div>
-              <div class="exp-date">
-                <span class="year-pill-new">2026</span>
-              </div>
-            </div>
-            <div class="exp-title-group">
-              <h4>Informatics Futsal Competition 2026</h4>
-              <span class="exp-role">Divisi Acara</span>
-            </div>
-            <p class="exp-desc">Berperan aktif sebagai Divisi acara dalam menyelenggarakan Turnamen Futsal tingkat
-              SMA/Sederajat se-Bandung Raya dan Sumedang. Bertanggung jawab dalam mengelola jalannya
-              pertandingan, memastikan jadwal acara terlaksana dengan baik, dan berkoordinasi dengan seluruh elemen
-              kepanitiaan demi kelancaran dan keberhasilan turnamen.</p>
-          </div>
-
-          <!-- Exp 6 -->
-          <div class="exp-card glass-card">
-            <div class="exp-header-top">
-              <div class="exp-icon"><i class='bx bxs-group'></i></div>
-              <div class="exp-date">
-                <span class="year-pill-new">2025</span>
-              </div>
-            </div>
-            <div class="exp-title-group">
-              <h4>Masa Orientasi Mahasiswa Teknik Informatika (MONITOR)</h4>
-              <span class="exp-role">Komisi Disiplin (Komdis)</span>
-            </div>
-            <p class="exp-desc">Bertugas sebagai Komisi Disiplin (Komdis) dalam kegiatan masa orientasi mahasiswa baru
-              jurusan Teknik Informatika yang berlangsung selama 13 September - 11 Oktober 2025. Bertanggung jawab penuh
-              dalam menegakkan kedisiplinan peserta, memastikan tata tertib acara dipatuhi, serta membantu membentuk
-              karakter dan mentalitas mahasiswa baru yang tangguh dan bertanggung jawab.</p>
-          </div>
-
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- Contact Section -->
-  <section id="contact" class="contact section-padding">
-    <div class="section-title centered-title scroll-reveal">
-      <h2>Get In <span class="highlight">Touch</span></h2>
-    </div>
-    <div class="contact-content glass-card scroll-reveal">
-      <h3 class="contact-heading">Let's Work Together</h3>
-      <p>Tertarik untuk berkolaborasi, menawarkan pekerjaan, atau sekadar ingin menyapa? Pesan Anda selalu diterima!</p>
-      <a href="https://wa.me/6282317179877" target="_blank" class="btn btn-primary contact-btn">Contact Me</a>
-      <div class="social-links">
-        <a href="https://github.com/Irgimf" class="social-icon"><i class='bx bxl-github'></i></a>
-        <a href="https://www.linkedin.com/in/irgimf" class="social-icon"><i class='bx bxl-linkedin'></i></a>
-        <a href="https://www.instagram.com/igye__" class="social-icon"><i class='bx bxl-instagram'></i></a>
-      </div>
-    </div>
-  </section>
-
-  <footer>
-    <p>&copy; 2026 Irgimf. Web Portofolio</p>
-  </footer>
+  <!-- Toast Notification -->
+  <div class="toast-banner" id="toastBanner" role="status" aria-live="polite"></div>
 
   <script type="module" src="./main.js"></script>
 </body>
