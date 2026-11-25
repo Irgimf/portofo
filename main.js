@@ -15,6 +15,7 @@ function initProfile() {
   const nameEl = document.getElementById('aboutName');
   const bioEl = document.getElementById('aboutBioText');
   const cvBtn = document.getElementById('viewCvBtn');
+  const cvBtnMobile = document.getElementById('viewCvBtnMobile');
   const portraitEl = document.getElementById('aboutPortrait');
   const heroSubjectEl = document.getElementById('heroSubjectImg');
   const eventImgEl = document.getElementById('contactEventImg');
@@ -22,6 +23,7 @@ function initProfile() {
   if (nameEl) nameEl.innerHTML = 'Irgi Muhammad<br>Fadll';
   if (bioEl) bioEl.textContent = PROFILE.bio;
   if (cvBtn) cvBtn.href = PROFILE.cvUrl;
+  if (cvBtnMobile) cvBtnMobile.href = PROFILE.cvUrl;
   if (portraitEl) portraitEl.src = PROFILE.portraitUrl;
   if (heroSubjectEl) heroSubjectEl.src = PROFILE.heroSubjectUrl;
   if (eventImgEl) eventImgEl.src = PROFILE.eventPhotoUrl;
@@ -200,7 +202,7 @@ function initTimelines() {
       <div class="timeline-row ${idx === 0 ? 'active' : ''}" data-edu-idx="${idx}">
         <div class="timeline-node">${idx + 1}</div>
         <div class="timeline-row-top">
-          <div class="org-logo"><img src="${item.logo}" alt="${item.institution}" loading="lazy" /></div>
+          <div class="org-logo"><img src="${item.logo}" alt="${item.institution}" decoding="async" /></div>
           <span class="org-name">${item.institution}</span>
           <span class="year-badge">${item.period}</span>
         </div>
@@ -227,7 +229,7 @@ function initTimelines() {
       <div class="timeline-row clickable ${idx === 0 ? 'active expanded' : ''}" data-exp-idx="${idx}">
         <div class="timeline-node">${idx + 1}</div>
         <div class="timeline-row-top">
-          <div class="org-logo"><img src="${item.logo}" alt="${item.organization}" loading="lazy" /></div>
+          <div class="org-logo"><img src="${item.logo}" alt="${item.organization}" decoding="async" /></div>
           <span class="org-name">${item.organization}</span>
           <span class="year-badge">${item.period}</span>
         </div>
@@ -735,7 +737,7 @@ function initScatteredGallery() {
       style="top:${item.top}; left:${item.left}; width:${item.width}px; z-index:${item.z};"
       data-gal-id="${item.id}">
       <div class="gallery-photo-inner">
-        <img src="${item.src}" alt="" loading="lazy" />
+        <img src="${item.src}" alt="" decoding="async" />
       </div>
     </div>`
   ).join('');
